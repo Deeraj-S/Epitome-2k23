@@ -8,7 +8,9 @@ function Home() {
     return (
         <>
             <Navbar />
-            <div className="back"></div>
+
+
+            <div className="bg"></div>
         </>
     )
 }
