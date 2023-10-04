@@ -11,6 +11,8 @@ function Home() {
 
 
             <div className="bg"></div>
+
+            <div>djdddjdjjjjjjjjj</div>
         </>
     )
 }

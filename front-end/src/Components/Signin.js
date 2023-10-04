@@ -1,14 +1,13 @@
 import { useState } from "react"
-import axios from "axios"
 import { Link, useNavigate } from 'react-router-dom'
-import Navbar from "./Navbar"
-import './Signin_upStyles.css'
+import '../styles/Signin_upStyles.css'
+import Navsign from "./Navsign"
 
-function SignIn(){
+function SignIn() {
     const navigate = useNavigate()
-    const [email,setEmail]= useState('')
-    const [password,setPassword]= useState('')
-    navigate("/")
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    navigate("/signin")
 
     /*const handleSubmit=() =>{
         console.log(email,password)
@@ -37,37 +36,39 @@ function SignIn(){
         })
     }*/
 
-return (<div className="signbody">
-    <h1 className="center"> SIGN IN </h1>
-    <div className="outcard">
-        <p>
-        Email
-        <input
-            onChange={(e) => {
-                setEmail(e.target.value)
-            }}
-            value={email}
-            className="inputs"
-            type="email" /> <br /> <br />
-        Password
-        <input
-            onChange={(e) => {
-                setPassword(e.target.value)
-            }}
-            value={password}
-            className="inputs" type="password" /> <br /> <br />
-            <Link style={{ textAlign: 'left', display: 'block' , marginTop:'-20px', color:'white'}}
-            to={'/forget-pass'}> Forget Password </Link>
-        <button
-            //onClick={handleSubmit}
-            className="btns"> SUBMIT </button>
-        <Link style={{ textAlign: 'center', display: 'block', marginTop: '5px', color:'white'}}
-            to={'/signup'}> SIGN UP </Link>
-        
-        </p>
+    return (<div className="signbody">
+
+        <Navsign />
+        <h1 className="center"> SIGN IN </h1>
+        <div className="outcard">
+            <p>
+                Email
+                <input
+                    onChange={(e) => {
+                        setEmail(e.target.value)
+                    }}
+                    value={email}
+                    className="inputs"
+                    type="email" /> <br /> <br />
+                Password
+                <input
+                    onChange={(e) => {
+                        setPassword(e.target.value)
+                    }}
+                    value={password}
+                    className="inputs" type="password" /> <br /> <br />
+                <Link style={{ textAlign: 'left', display: 'block', marginTop: '-20px', color: 'white' }}
+                    to={'/forget-pass'}> Forget Password </Link>
+                <button
+                    //onClick={handleSubmit}
+                    className="btns"> SUBMIT </button>
+                <Link style={{ textAlign: 'center', display: 'block', marginTop: '5px', color: 'white' }}
+                    to={'/signup'}> SIGN UP </Link>
+
+            </p>
+        </div>
     </div>
-</div>
-)
+    )
 }
 
 

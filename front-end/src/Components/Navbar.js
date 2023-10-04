@@ -1,6 +1,6 @@
 import React, { Component } from "react"
-import './NavbarStyles.css'
-
+import '../styles/NavbarStyles.css'
+import logo from '../images/logo.png'
 
 class Navbar extends Component {
     state = { clicked: false };
@@ -9,12 +9,12 @@ class Navbar extends Component {
     }
     render() {
         return (
-            <>
+            <><div>
                 <nav>
                     <a href="/">
-                        {/*  <img src={logo} alt="logo" className="logo" />*/}
+                        <img src={logo} alt="logo" className="logo" />
                     </a>
-                    <div>
+                    <div className="content">
                         <ul id="navbar" className={this.state.clicked ? "#navbar active" : "#navbar"}>
                             <li><a href="/">Home</a></li>
                             <li><a href="/about" >General rules</a></li>
@@ -28,6 +28,7 @@ class Navbar extends Component {
                         <i id="bar" className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                     </div>
                 </nav >
+            </div>
             </>
         )
     }
