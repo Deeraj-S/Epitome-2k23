@@ -1,69 +1,84 @@
-import { useState } from "react"
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import '../styles/Signin_upStyles.css'
+import './styles/Forms.css'
 
-function SignUp() {
-    const navigate = useNavigate()
-    const [name, setName] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [confirmpass, setconfirm] = useState('')
-    const [college, setcollege] = useState('')
-    navigate("/signup")
-    /*const handleSubmit=() =>{
-        console.log(email,password)
-        axios.post('http://localhost:5000/signup',
-        {
-            email: email,
-            password: password
-        })
-        .then(res => {
-            console.log(res.data)
-        }).catch(err => {
-            console.log(err)
-        })
-    }*/
-    return (
-        <div className="signbody">
-            <h1 className="center"> Sign Up </h1>
-            <div className="outcard">
-                <p>
-                    Name <input onChange={(e) => {
-                        setName(e.target.value)
-                    }}
-                        value={name} className="inputs" type="text" /><br />
+function Form() {
+    const [name,setname] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [confirmpass, setConfirm] = useState("");
+    const [College, setcollege] = useState("");
+  
+    const handleNameChange = (event) => {
+        setname(event.target.value);
+      };
 
-                    Email <input onChange={(e) => {
-                        setEmail(e.target.value)
-                    }}
-                        value={email} className="inputs" type="email" /><br />
+    const handleEmailChange = (event) => {
+      setEmail(event.target.value);
+    };
+  
+    const handlePasswordChange = (event) => {
+      setPassword(event.target.value);
+    };
 
-                    Password <input onChange={(e) => {
-                        setPassword(e.target.value)
-                    }}
-                        value={password} className="inputs" type="password" /><br />
+    const handleConfirmChange = (event) => {
+        setConfirm(event.target.value);
+      };
 
-                    Confirm Password <input onChange={(e) => {
-                        setconfirm(e.target.value)
-                    }}
-                        value={confirmpass} className="inputs" type="password" /><br />
+      const handleCollegeChange = (event) => {
+        setcollege(event.target.value);
+      };
 
-                    College name <input onChange={(e) => {
-                        setcollege(e.target.value)
-                    }}
-                        value={college} className="inputs" type="text" /><br />
+    
+  
+    const handleSubmit = (event) => {
+      event.preventDefault();
+      console.log("Name: ", name);
+      console.log("Email: ", email);
+      console.log("Password: ", password);
+      console.log("Comfirm password: ",confirmpass);
+      console.log("College: ",College);
 
-                    <button
-                        //onClick={handleSubmit}
-                        className="btns"> SUBMIT </button>
-                    <h4 className="btn1">Already register? Click on
-                        <Link style={{ color: 'white' }}
-                            to={'/SignIn'}> SIGN IN </Link> </h4>
-                </p>
-            </div>
-        </div>
-    )
+    };
+  return (
+    <div className='login-body'>
+    <div className='login-box'>
+    <p>REGISTER</p>
+
+    <form onSubmit={handleSubmit}>
+    <div className='user-box'>
+    <input type="text" name="username" value={name} onChange={handleNameChange} required/>
+    <label>username</label>
+    </div>
+    <div className='user-box'>
+    <input type="email" name="email" value={email} onChange={handleEmailChange} required/>
+    <label>Email</label>
+    </div>
+    <div className='user-box'>
+    <input type="password" name="password" value={password} onChange={handlePasswordChange} required/>
+    <label>Password</label>
+    </div>
+    <div className='user-box'>
+    <input type="password" name="password" value={confirmpass} onChange={handleConfirmChange} required/>
+    <label>Confirm Password</label>
+    </div>
+    <div className='user-box'>
+    <input type="password" name="college" value={College} onChange={handleCollegeChange} required/>
+    <label>College name</label>
+    </div>
+    <a href='#' onClick={handleSubmit}>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    Submit
+    </a>
+    
+    <p>Already have an account? <sub> <a href='./SignIn' className="a2">Sign in!</a></sub></p>
+    </form>
+    </div>
+    </div>
+  )
 }
 
-
-export default SignUp
+export default Form
