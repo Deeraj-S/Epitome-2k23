@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../styles/SignupForms.css'
+import '../styles/Forms.css'
 import Navsign from './Navsign';
 
-function Form() {
+function Forms() {
   const navigate = useNavigate();
   navigate('/signup')
   const [name, setname] = useState("");
@@ -88,4 +88,4 @@ function Form() {
   )
 }
 
-export default Form
+export default Forms
