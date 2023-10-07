@@ -1,11 +1,12 @@
-.login-body{
-  background-image: url(../images/login1.jpg);
+.login-body {
+  background-image: url(../images/login1.jpeg);
   position: fixed;
-min-width: 100%;
-min-height: 100%;
-background-size: cover;
-background-position: center;
+  min-width: 100%;
+  min-height: 100%;
+  background-size: cover;
+  background-position: center;
 }
+
 .login-box {
   position: absolute;
   top: 50%;
@@ -16,7 +17,7 @@ background-position: center;
   transform: translate(-50%, -55%);
   background: rgba(14, 14, 14, 0.9);
   box-sizing: border-box;
-  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
   border-radius: 10px;
 }
 
@@ -57,8 +58,8 @@ background-position: center;
   transition: .5s;
 }
 
-.login-box .user-box input:focus ~ label,
-.login-box .user-box input:valid ~ label {
+.login-box .user-box input:focus~label,
+.login-box .user-box input:valid~label {
   top: -20px;
   left: 0;
   color: #e3e0e0;
@@ -105,7 +106,8 @@ background-position: center;
     left: -100%;
   }
 
-  50%,100% {
+  50%,
+  100% {
     left: 100%;
   }
 }
@@ -125,7 +127,8 @@ background-position: center;
     top: -100%;
   }
 
-  50%,100% {
+  50%,
+  100% {
     top: 100%;
   }
 }
@@ -145,7 +148,8 @@ background-position: center;
     right: -100%;
   }
 
-  50%,100% {
+  50%,
+  100% {
     right: 100%;
   }
 }
@@ -165,12 +169,13 @@ background-position: center;
     bottom: -100%;
   }
 
-  50%,100% {
+  50%,
+  100% {
     bottom: 100%;
   }
 }
 
-.login-box a.a1{
+.login-box a.a1 {
   color: #aaa;
   font-size: 0.7rem;
   margin-top: -8px;
@@ -181,7 +186,7 @@ background-position: center;
   background: transparent;
   color: #aaaaaa;
   border-radius: 5px;
-}  
+}
 
 .login-box p:last-child {
   color: #aaa;
@@ -203,4 +208,4 @@ background-position: center;
   background: transparent;
   color: #aaaaaa;
   border-radius: 5px;
-}  
+}

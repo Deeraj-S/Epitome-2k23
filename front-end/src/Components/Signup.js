@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import '../styles/SignUpForms.css'
+import '../styles/Forms.css'
 import Navsign from './Navsign';
 
 function Form() {

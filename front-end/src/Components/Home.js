@@ -1,6 +1,7 @@
 import React from "react"
 import Navbar from "./Navbar"
 import { useNavigate } from "react-router-dom"
+import '../styles/Home.css'
 
 function Home() {
     const navigate = useNavigate();
@@ -8,11 +9,8 @@ function Home() {
     return (
         <>
             <Navbar />
-
-
             <div className="bg"></div>
 
-            <div>djdddjdjjjjjjjjj</div>
         </>
     )
 }
