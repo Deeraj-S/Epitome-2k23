@@ -2,13 +2,17 @@ import React, { Component } from "react"
 import '../styles/NavbarStyles.css'
 import logo from '../images/logo.png'
 
+
 class Navbar extends Component {
+
     state = { clicked: false };
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
     }
+
     render() {
         return (
+
             <><div>
                 <nav>
                     <a href="/">

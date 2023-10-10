@@ -25,6 +25,37 @@
     height: 100%;
 }
 
+/*.event-bg {
+    background-image: url(../img8.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}*/
+
+.event-buttons {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 12% 12% 12% 12% 12% 12%;
+    grid-template-rows: 4rem 4rem;
+    gap: 20px;
+}
+
+.btn1 {
+    background: rgb(30, 29, 29);
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.btn1:hover {
+    cursor: pointer;
+}
+
+
+
 .event-box {
     margin: 5rem 0 2rem 0;
     display: grid;
@@ -40,16 +71,123 @@ h1 {
     justify-content: center;
 }
 
-.box1 {
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9,
+.box10,
+.box11,
+.box12 {
     background: #10141e;
     border-radius: 5px;
     margin-bottom: 3rem;
     border: 5px solid black;
-    height: 21rem;
+    height: 23rem;
 }
 
-.box1:hover {
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9,
+.box10,
+.box11,
+.box12 :hover {
     cursor: pointer;
+}
+
+
+.box1 {
+    background-image: url(../images/Timewarp.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box2 {
+    background-image: url(../images/Mindmines.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box3 {
+    background-image: url(../images/Futureflash.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box4 {
+    background-image: url(../images/TurnTheTable.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box5 {
+    background-image: url(../images/Chronobeats.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box6 {
+    background-image: url(../images/Fashionshow.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box7 {
+    background-image: url(../images/Treasurehunt.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box8 {
+    background-image: url(../images/ItManager.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box9 {
+    background-image: url(../images/Flashforward.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box10 {
+    background-image: url(../images/Dumcharades.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box11 {
+    background-image: url(../images/Gaming.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.box12 {
+    background-image: url(../images/logocreation.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 @media screen and (max-width:1200px) {
@@ -58,6 +196,14 @@ h1 {
         grid-template-columns: 25% 25% 25%;
         grid-template-rows: 400px 400px;
         gap: 30px;
+    }
+
+    .event-buttons {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 20% 20% 20%;
+        grid-template-rows: 4rem 4rem 4rem 4rem;
+        gap: 15px;
     }
 }
 
@@ -86,4 +232,13 @@ h1 {
         grid-template-columns: minmax(10%, 1fr);
         gap: 10px;
     }
+
+    .event-buttons {
+        display: grid;
+        justify-content: center;
+        grid-template-columns: 37% 37%;
+        grid-template-rows: 4rem 4rem 4rem 4rem 4rem 4rem;
+        gap: 15px;
+    }
+
 }
