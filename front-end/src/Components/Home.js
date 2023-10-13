@@ -35,10 +35,15 @@ function Home() {
     return (
         <>
             <Navbar />
-            <div className="bg-image"></div>
+            <div className="bg-image">
+                <div className="bg-text">
+                    <p>EPITOME</p>
+                </div>
+
+            </div>
             <div className="logo-image"><div className="logo-holder"><img src={image} alt="logo" className="img-logo" /></div></div>
             <div className="event-bg">
-                <h1>EVETNS</h1>
+                <h1>EVENTS</h1>
                 <div className="event-buttons">
                     <button onClick={() => scrollToSection(timeWrap)} className="btn1">Hello</button>
                     <button onClick={() => scrollToSection(mindMines)} className="btn1">Hello</button>
