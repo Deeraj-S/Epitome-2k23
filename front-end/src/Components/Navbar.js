@@ -21,7 +21,7 @@ class Navbar extends Component {
                     <div className="content">
                         <ul id="navbar" className={this.state.clicked ? "#navbar active" : "#navbar"}>
                             <li><a href="/">Home</a></li>
-                            <li><a href="/about" >General rules</a></li>
+                            <li><a href="/About" >General rules</a></li>
                             <li><a href="/">Registration</a></li>
                             <li><a href="/">Events</a></li>
                             <li><a href="/">Schedule</a></li>
