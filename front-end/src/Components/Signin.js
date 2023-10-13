@@ -39,7 +39,7 @@ function Signin() {
               <input type="password" name="email" value={password} onChange={handlePasswordChange} required />
               <label>Password</label>
             </div>
-            <a href='/forget-pass' className="a1"> Forget Password ?</a>
+            <a href='/forgotpass' className="a1"> Forget Password ?</a>
             <a href='/' onClick={handleSubmit}>
               <span></span>
               <span></span>
