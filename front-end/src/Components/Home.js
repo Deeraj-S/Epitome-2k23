@@ -21,17 +21,20 @@ function Home() {
     const games = useRef(null);
     const paradox = useRef(null);
 
-
     const scrollToSection = (elementRef) => {
         window.scrollTo({
             top: elementRef.current.offsetTop,
             behavior: "smooth",
-
         });
     }
 
     const navigate = useNavigate();
     navigate("/")
+
+
+
+
+
     return (
         <>
             <Navbar />
