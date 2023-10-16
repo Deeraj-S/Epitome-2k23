@@ -5,9 +5,13 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import image from '../img2.png'
 import '../styles/Home.css'
-
+import { useState, useEffect } from "react"
 
 function Home() {
+    const [isVisible, setIsVisible] = useState(true);
+    const [height, setHeight] = useState(0);
+    const [isDivVisible, setIsDivVisible] = useState(true);
+
     const timeWrap = useRef(null);
     const mindMines = useRef(null);
     const futureFlash = useRef(null);
@@ -20,6 +24,7 @@ function Home() {
     const dumbCharades = useRef(null);
     const games = useRef(null);
     const paradox = useRef(null);
+    const events = useRef(null);
 
     const scrollToSection = (elementRef) => {
         window.scrollTo({
@@ -28,24 +33,42 @@ function Home() {
         });
     }
 
-    const navigate = useNavigate();
-    navigate("/")
 
 
+    useEffect(() => {
+        window.addEventListener("scroll", listenToScroll);
+        return () =>
+            window.removeEventListener("scroll", listenToScroll);
+    })
 
+    const listenToScroll = () => {
+        let heightToHideFrom = 330;
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        setHeight(winScroll);
 
+        if (winScroll > heightToHideFrom) {
+            isVisible && setIsVisible(false);
+        } else {
+            setIsVisible(true);
+        }
+    };
 
     return (
         <>
-            <Navbar />
+            <Navbar onToggleVisibility={() => setIsDivVisible(!isDivVisible)} onEventScroll={() => scrollToSection(events)} />
             <div className="bg-image">
-                <div className="bg-text">
-                    <p>EPITOME</p>
-                </div>
-
+                {
+                    isVisible
+                    &&
+                    isDivVisible
+                    &&
+                    <div className="bg-text">
+                        <p>EPITOME</p>
+                    </div>
+                }
             </div>
             <div className="logo-image"><div className="logo-holder"><img src={image} alt="logo" className="img-logo" /></div></div>
-            <div className="event-bg">
+            <div className="event-bg" ref={events}>
                 <h1>EVENTS</h1>
                 <div className="event-buttons">
                     <button onClick={() => scrollToSection(timeWrap)} className="btn1">Hello</button>

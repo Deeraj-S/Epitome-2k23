@@ -1,48 +1,46 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../styles/Forms.css'
 import Navsign from './Navsign';
+import { useFormik } from 'formik';
+import { signUpSchema } from '../schemas/signupSchema';
+
+
+const initialValues = {
+  username: "",
+  email: "",
+  password: "",
+  confirm_password: "",
+  college: "",
+};
 
 function Forms() {
+  const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+    initialValues: initialValues,
+    validationSchema: signUpSchema,
+
+    onSubmit: (values, action) => {
+      console.log(values)
+      action.resetForm()
+    }
+  });
+
   const navigate = useNavigate();
   navigate('/signup')
-  const [name, setname] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmpass, setConfirm] = useState("");
-  const [College, setcollege] = useState("");
 
-  const handleNameChange = (event) => {
-    setname(event.target.value);
-  };
-
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleConfirmChange = (event) => {
-    setConfirm(event.target.value);
-  };
-
-  const handleCollegeChange = (event) => {
-    setcollege(event.target.value);
-  };
-
-
-
-  const handleSubmit = (event) => {
+  /*const handleSignupSubmit = (event) => {
     event.preventDefault();
-    console.log("Name: ", name);
-    console.log("Email: ", email);
-    console.log("Password: ", password);
-    console.log("Comfirm password: ", confirmpass);
-    console.log("College: ", College);
+    console.log("Name: ", values.username);
+    console.log("Email: ", values.email);
+    console.log("Password: ", values.password);
+    console.log("Comfirm password: ", values.confirm_password);
+    console.log("College: ", values.college);
+  };*/
 
-  };
+  const handleSignup = () => {
+
+  }
+
   return (
     <>
       <div className='login-body'>
@@ -52,27 +50,41 @@ function Forms() {
           <p>REGISTER</p>
 
           <form onSubmit={handleSubmit}>
+
             <div className='user-box'>
-              <input type="text" name="username" value={name} onChange={handleNameChange} required />
-              <label>username</label>
+              <input type="name" autoComplete='off' name="username" id='name' value={values.username} onChange={handleChange} onBlur={handleBlur} required />
+              {errors.username && touched.username ? (<p className='form-error'>{errors.username}</p>) : null}
+              <label htmlFor='name'>username</label>
             </div>
+
             <div className='user-box'>
-              <input type="email" name="email" value={email} onChange={handleEmailChange} required />
-              <label>Email</label>
+              <input type="text" autoComplete='off' name="email" id='email' value={values.email} onChange={handleChange} onBlur={handleBlur} required />
+              {errors.email && touched.email ? (<p className='form-error'>{errors.email}</p>) : null}
+              <label htmlFor='email'>Email</label>
             </div>
+
+
             <div className='user-box'>
-              <input type="password" name="password" value={password} onChange={handlePasswordChange} required />
-              <label>Password</label>
+              <input type="password" autoComplete='off' name="password" id='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
+              {errors.password && touched.password ? (<p className='form-error'>{errors.password}</p>) : null}
+              <label htmlFor='password'>Password</label>
             </div>
+
+
             <div className='user-box'>
-              <input type="password" name="password" value={confirmpass} onChange={handleConfirmChange} required />
-              <label>Confirm Password</label>
+              <input className='textbox' type="password" autoComplete='off' name="confirm_password" id='confirm_password' value={values.confirm_password} onChange={handleChange} onBlur={handleBlur} required />
+              {errors.confirm_password && touched.confirm_password ? (<p className='form-error'>{errors.confirm_password}</p>) : null}
+              <label htmlFor='confirm_password'>Confirm Password</label>
             </div>
+
+
             <div className='user-box'>
-              <input type="password" name="college" value={College} onChange={handleCollegeChange} required />
-              <label>College name</label>
+              <input type="text" autoComplete='off' name="college" id='college' value={values.college} onChange={handleChange} onBlur={handleBlur} required />
+              {errors.college && touched.college ? (<p className='form-error'>{errors.college}</p>) : null}
+              <label htmlFor='college'>College name</label>
             </div>
-            <a href='/' onClick={handleSubmit}>
+
+            <a href='/' onClick={handleSignup}>
               <span></span>
               <span></span>
               <span></span>

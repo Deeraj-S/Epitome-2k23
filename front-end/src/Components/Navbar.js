@@ -1,7 +1,6 @@
-import React, { Component } from "react"
+import React, { Component, forwardRef } from "react"
 import '../styles/NavbarStyles.css'
 import logo from '../images/logo.png'
-
 
 class Navbar extends Component {
 
@@ -23,18 +22,16 @@ class Navbar extends Component {
                             <li><a href="/">Home</a></li>
                             <li><a href="/About" >General rules</a></li>
                             <li><a href="/">Registration</a></li>
-                            <li><a href="/">Events</a></li>
+                            <li ><a role="button" onClick={this.props.onEventScroll} className="event-btn">Events</a></li>
                             <li><a href="/">Schedule</a></li>
                             <li><a href="/">Help desk</a></li>
                         </ul>
                     </div>
                     <div id="mobile" onClick={this.handleClick}>
-                        <i id="bar" className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+                        <i onClick={this.props.onToggleVisibility} id="bar" className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
                     </div>
                 </nav >
             </div>
-
-
             </>
         )
     }

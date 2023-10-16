@@ -209,3 +209,9 @@
   color: #aaaaaa;
   border-radius: 5px;
 }
+
+.form-error {
+  margin-top: -1.9rem;
+  font-size: 0.9rem;
+  color: #b22b27;
+}
