@@ -1,4 +1,4 @@
-import React, { Component, forwardRef } from "react"
+import React, { Component } from "react"
 import '../styles/NavbarStyles.css'
 import logo from '../images/logo.png'
 
