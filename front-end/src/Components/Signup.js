@@ -25,8 +25,9 @@ function Forms() {
     }
   });
 
+  const link = ''
   const navigate = useNavigate();
-  navigate('/signup')
+
 
   /*const handleSignupSubmit = (event) => {
     event.preventDefault();
@@ -84,7 +85,7 @@ function Forms() {
               <label htmlFor='college'>College name</label>
             </div>
 
-            <a href='/' onClick={handleSignup}>
+            <a href={link} onClick={handleSubmit}>
               <span></span>
               <span></span>
               <span></span>

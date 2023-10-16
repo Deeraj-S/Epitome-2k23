@@ -9,6 +9,11 @@ class Navbar extends Component {
         this.setState({ clicked: !this.state.clicked })
     }
 
+    constructor(props) {
+        super(props)
+        this.link = this.events;
+    }
+
     render() {
         return (
 
@@ -17,12 +22,12 @@ class Navbar extends Component {
                     <a href="/">
                         <img src={logo} alt="logo" className="logo" />
                     </a>
-                    <div className="content">
+                    <div className="content" id="content">
                         <ul id="navbar" className={this.state.clicked ? "#navbar active" : "#navbar"}>
                             <li><a href="/">Home</a></li>
                             <li><a href="/About" >General rules</a></li>
                             <li><a href="/">Registration</a></li>
-                            <li ><a role="button" onClick={this.props.onEventScroll} className="event-btn">Events</a></li>
+                            <li ><a href={this.link} onClick={this.props.onEventScroll} className="event-btn">Events</a></li>
                             <li><a href="/">Schedule</a></li>
                             <li><a href="/">Help desk</a></li>
                         </ul>
