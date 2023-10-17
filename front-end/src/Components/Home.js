@@ -71,18 +71,18 @@ function Home() {
             <div className="event-bg" ref={events}>
                 <h1>EVENTS</h1>
                 <div className="event-buttons">
-                    <button onClick={() => scrollToSection(timeWrap)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(mindMines)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(futureFlash)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(turnTheTable)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(chronoBeats)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(setllar)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(conunDrum)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(itManager)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(flashForward)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(dumbCharades)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(games)} className="btn1">Hello</button>
-                    <button onClick={() => scrollToSection(paradox)} className="btn1">Hello</button>
+                    <button onClick={() => scrollToSection(timeWrap)} className="btn1">TIME WRAP</button>
+                    <button onClick={() => scrollToSection(mindMines)} className="btn1">MIND MINES</button>
+                    <button onClick={() => scrollToSection(futureFlash)} className="btn1">FUTURE FLASH</button>
+                    <button onClick={() => scrollToSection(turnTheTable)} className="btn1">TURN THE TABLE</button>
+                    <button onClick={() => scrollToSection(chronoBeats)} className="btn1">CHRONOBEATS</button>
+                    <button onClick={() => scrollToSection(setllar)} className="btn1">SETLLAR</button>
+                    <button onClick={() => scrollToSection(conunDrum)} className="btn1">CONUNDRUM</button>
+                    <button onClick={() => scrollToSection(itManager)} className="btn1">IT PHARAOH</button>
+                    <button onClick={() => scrollToSection(flashForward)} className="btn1">FLASH FORWARD</button>
+                    <button onClick={() => scrollToSection(dumbCharades)} className="btn1">DUMB CHARADES</button>
+                    <button onClick={() => scrollToSection(games)} className="btn1">WARLOADS</button>
+                    <button onClick={() => scrollToSection(paradox)} className="btn1">PARADOX</button>
                 </div>
                 <h1>EVENT POSTERS</h1>
                 <div className="event-box">

@@ -26,9 +26,9 @@ class Navbar extends Component {
                         <ul id="navbar" className={this.state.clicked ? "#navbar active" : "#navbar"}>
                             <li><a href="/">Home</a></li>
                             <li><a href="/About" >General rules</a></li>
-                            <li><a href="/">Registration</a></li>
+                            <li><a href="/Registration">Registration</a></li>
                             <li ><a href={this.link} onClick={this.props.onEventScroll} className="event-btn">Events</a></li>
-                            <li><a href="/">Schedule</a></li>
+                            <li><a href="/Schedule">Schedule</a></li>
                             <li><a href="/">Help desk</a></li>
                         </ul>
                     </div>
