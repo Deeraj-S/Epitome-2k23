@@ -1,9 +1,9 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import '../styles/Forms.css'
 import Navsign from './Navsign';
 import { useFormik } from 'formik';
 import { signUpSchema } from '../schemas/signupSchema';
+import axios from 'axios';
 
 
 const initialValues = {
@@ -22,11 +22,26 @@ function Forms() {
     onSubmit: (values, action) => {
       console.log(values)
       action.resetForm()
+
+      axios.post('http://localhost:5000/signup', {
+        username: values.username,
+        email: values.email,
+        password: values.password,
+        confirm_password: values.confirm_password,
+        college: values.college
+      }).then((res) => {
+
+      }).catch((err) => {
+
+      })
+
+
+
     }
   });
 
   const link = ''
-  const navigate = useNavigate();
+
 
 
   /*const handleSignupSubmit = (event) => {
@@ -38,9 +53,7 @@ function Forms() {
     console.log("College: ", values.college);
   };*/
 
-  const handleSignup = () => {
 
-  }
 
   return (
     <>
