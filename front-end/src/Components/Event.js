@@ -1,16 +1,9 @@
-import React from "react"
-import { useNavigate } from "react-router-dom"
-import Navbar from "./Navbar"
-import Footer from "./Footer"
-import image from '../img2.png'
-import '../styles/Home.css'
-import { useState, useEffect, useRef } from "react"
+import React from "react";
+import { useRef } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
-function Home() {
-    const navigate = useNavigate()
-    const [isVisible, setIsVisible] = useState(true);
-    const [height, setHeight] = useState(0);
-    const [isDivVisible, setIsDivVisible] = useState(true);
+function Event() {
     const timeWrap = useRef(null);
     const mindMines = useRef(null);
     const futureFlash = useRef(null);
@@ -32,46 +25,10 @@ function Home() {
         });
     }
 
-    useEffect(() => {
-        const token = localStorage.getItem('TOKEN')
-        if (!token) {
-            navigate('/signin')
-        }
-    })
-
-    useEffect(() => {
-        window.addEventListener("scroll", listenToScroll);
-        return () =>
-            window.removeEventListener("scroll", listenToScroll);
-    })
-
-    const listenToScroll = () => {
-        let heightToHideFrom = 330;
-        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
-        setHeight(winScroll);
-
-        if (winScroll > heightToHideFrom) {
-            isVisible && setIsVisible(false);
-        } else {
-            setIsVisible(true);
-        }
-    };
 
     return (
         <>
-            <Navbar onToggleVisibility={() => setIsDivVisible(!isDivVisible)} />
-            <div className="bg-image">
-                {
-                    isVisible
-                    &&
-                    isDivVisible
-                    &&
-                    <div className="bg-text">
-                        <p>EPITOME</p>
-                    </div>
-                }
-            </div>
-            <div className="logo-image"><div className="logo-holder"><img src={image} alt="logo" className="img-logo" /></div></div>
+            <Navbar />
             <div className="event-bg" ref={events}>
                 <h1>EVENTS</h1>
                 <div className="event-buttons">
@@ -109,4 +66,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Event

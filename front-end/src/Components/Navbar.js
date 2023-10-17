@@ -3,15 +3,9 @@ import '../styles/NavbarStyles.css'
 import logo from '../images/logo.png'
 
 class Navbar extends Component {
-
     state = { clicked: false };
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
-    }
-
-    constructor(props) {
-        super(props)
-        this.link = this.events;
     }
 
     render() {
@@ -27,7 +21,7 @@ class Navbar extends Component {
                             <li><a href="/">Home</a></li>
                             <li><a href="/About" >General rules</a></li>
                             <li><a href="/Registration">Registration</a></li>
-                            <li ><a href={this.link} onClick={this.props.onEventScroll} className="event-btn">Events</a></li>
+                            <li ><a href="/events" >Events</a></li>
                             <li><a href="/Schedule">Schedule</a></li>
                             <li><a href="/">Help desk</a></li>
                         </ul>

@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import '../styles/Forms.css'
 import Navsign from './Navsign';
 import { useFormik } from 'formik';
 import { signUpSchema } from '../schemas/signupSchema';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 
 const initialValues = {
@@ -15,13 +16,22 @@ const initialValues = {
 };
 
 function Forms() {
+  const navigate = useNavigate()
+  const link = ''
+
+  useEffect(() => {
+    const token = localStorage.getItem('TOKEN')
+    if (token) {
+      navigate('/')
+    }
+  })
+
   const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
     validationSchema: signUpSchema,
 
     onSubmit: (values, action) => {
       console.log(values)
-      action.resetForm()
 
       axios.post('http://localhost:5000/signup', {
         username: values.username,
@@ -29,31 +39,20 @@ function Forms() {
         password: values.password,
         confirm_password: values.confirm_password,
         college: values.college
-      }).then((res) => {
 
+      }).then((res) => {
+        if (res.data.code === 200) {
+          alert('Signup Successfull')
+          navigate('/signin')
+        }
+        if (res.data.code === 404) {
+          alert('User already exist')
+        }
       }).catch((err) => {
 
       })
-
-
-
     }
   });
-
-  const link = ''
-
-
-
-  /*const handleSignupSubmit = (event) => {
-    event.preventDefault();
-    console.log("Name: ", values.username);
-    console.log("Email: ", values.email);
-    console.log("Password: ", values.password);
-    console.log("Comfirm password: ", values.confirm_password);
-    console.log("College: ", values.college);
-  };*/
-
-
 
   return (
     <>

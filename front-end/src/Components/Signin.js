@@ -1,13 +1,21 @@
-import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
 import '../styles/Forms.css'
 import Navsign from './Navsign';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Signin() {
-  const navigate = useNavigate();
-  navigate('/signin')
+  const navigate = useNavigate()
+  const link = '';
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  useEffect(() => {
+    const token = localStorage.getItem('TOKEN')
+    if (token) {
+      navigate('/')
+    }
+  })
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -19,18 +27,40 @@ function Signin() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(event)
     console.log("Email: ", email);
     console.log("Password: ", password);
+
+    axios.post('http://localhost:5000/signin', {
+      email: email,
+      password: password
+    })
+      .then((res) => {
+        if (res.data.code === 500) {
+          alert('User Not Found')
+        }
+        if (res.data.code === 404) {
+          alert('Invalid Password')
+        }
+
+        if (res.data.code === 200) {
+          navigate('/')
+          localStorage.setItem('TOKEN', res.data.token)
+        }
+      }).catch((err) => {
+
+      })
   };
+
+
   return (
     <>
-
       <div className='login-body'>
         <Navsign />
         <div className='login-box'>
           <p>Login</p>
 
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} >
             <div className='user-box'>
               <input type="email" name="email" value={email} onChange={handleEmailChange} required />
               <label>Email</label>
@@ -40,7 +70,7 @@ function Signin() {
               <label>Password</label>
             </div>
             <a href='/forgotpass' className="a1"> Forget Password ?</a>
-            <a href='/' onClick={handleSubmit}>
+            <a href={link} onClick={handleSubmit}>
               <span></span>
               <span></span>
               <span></span>
