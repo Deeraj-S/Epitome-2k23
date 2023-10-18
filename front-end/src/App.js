@@ -7,6 +7,8 @@ import ForgotPass from './Components/ForgotPass';
 import ChangePass from './Components/ChangePass';
 import Registration from './Components/Registration';
 import Events from './Components/Event';
+import About from './Components/About';
+import Schedule from './Components/Schedule';
 
 function App() {
   return (
@@ -18,8 +20,10 @@ function App() {
           <Route path='/signin' element={<SignIn />}></Route>
           <Route path='/forgotpass' element={<ForgotPass />}></Route>
           <Route path='/newpass' element={<ChangePass />}></Route>
+          <Route path='/About' element={<About />}></Route>
           <Route path='/Registration' element={<Registration />}></Route>
           <Route path='/events' element={<Events />} ></Route>
+          <Route path='/Schedule' element={<Schedule />}></Route>
         </Routes>
       </BrowserRouter>
     </>
