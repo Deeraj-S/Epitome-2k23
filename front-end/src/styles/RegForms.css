@@ -61,7 +61,7 @@
   margin: 0;
 }
 
-.input-box form a {
+.register-btn {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -75,7 +75,7 @@
   letter-spacing: 3px
 }
 
-.reg-box a:hover {
+.register-btn a:hover {
   background: #53baff;
   color: #272727;
   border-radius: 5px;

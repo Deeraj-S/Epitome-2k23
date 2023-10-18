@@ -201,6 +201,11 @@ function Form() {
     setgaming_user2(event.target.value);
   };
 
+  const [trans,settrans]=useState("");
+  const handleTransChange = (event) =>{
+    settrans(event.target.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log("quiz_user1 : ", quiz_user1);
@@ -261,6 +266,8 @@ function Form() {
     console.log("gaaming_phno1 : ", gaming_phno1);
     console.log("gaming_user2 : ", gaming_user2);
 
+    console.log("trans : ",trans);
+
   };
   return (
     <>
@@ -279,28 +286,28 @@ function Form() {
             <h4>IT QUIZ</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="quiz_user1" value={quiz_user1} onChange={handleQuiz_user1Change} required />
-              <input type="number" placeholder="Phone no" name="quiz_phno1" value={quiz_phno1} onChange={handleQuiz_phno1Change} required />
+              <input type="text" placeholder="Participant 2" name="quiz_user2" value={quiz_user2} onChange={handleQuiz_user2Change} required />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 2" name="quiz_user2" value={quiz_user2} onChange={handleQuiz_user2Change} required />
+            <input type="number" placeholder="Phone no" name="quiz_phno1" value={quiz_phno1} onChange={handleQuiz_phno1Change} required />
             </div>
 
             <h4>CODING AND WEB DESIGN</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="code_user1" value={code_user1} onChange={handleCode_user1Change} required />
-              <input type="number" placeholder="Phone no" name="code_phno1" value={code_phno1} onChange={handleCode_phno1Change} required />
+              <input type="text" placeholder="Participant 2" name="code_user2" value={code_user2} onChange={handleCode_user2Change} required />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 2" name="code_user2" value={code_user2} onChange={handleCode_user2Change} required />
+              <input type="number" placeholder="Phone no" name="code_phno1" value={code_phno1} onChange={handleCode_phno1Change} required />
             </div>
 
             <h4>TREASURE HUNT </h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="treasure_user1" value={treasure_user1} onChange={handleTreasure_user1Change} required />
-              <input type="number" placeholder="Phone no" name="treasure_phno1" value={treasure_phno1} onChange={handleTreasure_phno1Change} required />
+              <input type="text" placeholder="Participant 2" name="treasure_user2" value={treasure_user2} onChange={handleTreasure_user2Change} required />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 2" name="treasure_user2" value={treasure_user2} onChange={handleTreasure_user2Change} required />
+              <input type="number" placeholder="Phone no" name="treasure_phno1" value={treasure_phno1} onChange={handleTreasure_phno1Change} required />
             </div>
 
             <h4>PHOTOGRAPHY </h4>
@@ -318,82 +325,87 @@ function Form() {
             <h4>THEMATIC DANCE</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="thematic_user1" value={thematic_user1} onChange={handleThematic_user1Change} required />
-              <input type="number" placeholder="Phone no" name="thematic_phno1" value={thematic_phno1} onChange={handleThematic_phno1Change} required />
+              <input type="text" placeholder="Participant 2" name="thematic_user2" value={thematic_user2} onChange={handleThematic_user2Change} />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 2" name="thematic_user2" value={thematic_user2} onChange={handleThematic_user2Change} required />
               <input type="text" placeholder="Participant 3" name="thematic_user3" value={thematic_user3} onChange={handleThematic_user3Change} required />
-            </div>
-            <div className='input-box'>
               <input type="text" placeholder="Participant 4" name="thematic_user4" value={thematic_user4} onChange={handleThematic_user4Change} required />
-              <input type="text" placeholder="Participant 5" name="thematic_user5" value={thematic_user5} onChange={handleThematic_user5Change} required />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 6" name="thematic_user6" value={thematic_user6} onChange={handleThematic_user6Change} />
+              <input type="text" placeholder="Participant 5" name="thematic_user5" value={thematic_user5} onChange={handleThematic_user5Change} required />
+              <input type="text" placeholder="Participant 6" name="thematic_user6" value={thematic_user6} onChange={handleThematic_user6Change} required />
+            </div>
+            <div className='input-box'>
+            <input type="number" placeholder="Phone no" name="thematic_phno1" value={thematic_phno1} onChange={handleThematic_phno1Change} required />
             </div>
 
             <h4>MOVIE MAKING</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="movie_user1" value={movie_user1} onChange={handleMovie_user1Change} required />
-              <input type="number" placeholder="Phone no" name="movie_phno1" value={movie_phno1} onChange={handleMovie_phno1Change} required />
+              <input type="text" placeholder="Participant 2" name="movie_user2" value={movie_user2} onChange={handleMovie_user2Change} />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 2" name="movie_user2" value={movie_user2} onChange={handleMovie_user2Change} required />
               <input type="text" placeholder="Participant 3" name="movie_user3" value={movie_user3} onChange={handleMovie_user3Change} required />
-            </div>
-            <div className='input-box'>
               <input type="text" placeholder="Participant 4" name="movie_user4" value={movie_user4} onChange={handleMovie_user4Change} required />
-              <input type="text" placeholder="Participant 5" name="movie_user5" value={movie_user5} onChange={handleMovie_user5Change} required />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 6" name="movie_user6" value={movie_user6} onChange={handleMovie_user6Change} />
+              <input type="text" placeholder="Participant 5" name="movie_user5" value={movie_user5} onChange={handleMovie_user5Change} required />
+              <input type="text" placeholder="Participant 6" name="movie_user6" value={movie_user6} onChange={handleMovie_user6Change} required />
+            </div>
+            <div className='input-box'>
+              <input type="number" placeholder="Phone no" name="movie_phno1" value={movie_phno1} onChange={handleMovie_phno1Change} required />
             </div>
 
             <h4>POT POURI</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="pot_user1" value={pot_user1} onChange={handlePot_user1Change} required />
-              <input type="number" placeholder="Phone no" name="pot_phno1" value={pot_phno1} onChange={handlePot_phno1Change} required />
+              <input type="text" placeholder="Participant 2" name="pot_use2" value={pot_user2} onChange={handlePot_user2Change} required />
             </div>
             <div className='input-box'>
-              <input type="text" placeholder="Participant 2" name="pot_use2" value={pot_user2} onChange={handlePot_user2Change} required />
               <input type="text" placeholder="Participant 3" name="pot_user3" value={pot_user3} onChange={handlePot_user3Change} required />
+              <input type="number" placeholder="Phone no" name="pot_phno1" value={pot_phno1} onChange={handlePot_phno1Change} required />
             </div>
 
             <h4>IT DEBATE</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="debate_user1" value={debate_user1} onChange={handleDebate_user1Change} required />
-              <input type="number" placeholder="Phone no" name="debate_phno1" value={debate_phno1} onChange={handleDebate_phno1Change} required />
-            </div>
-            <div className='input-box'>
               <input type="text" placeholder="Participant 2" name="debate_user2" value={debate_user2} onChange={handleDebate_user2Change} required />
             </div>
+            <div className='input-box'>
+              <input type="number" placeholder="Phone no" name="debate_phno1" value={debate_phno1} onChange={handleDebate_phno1Change} required />
+              </div>
 
             <h4>FASHION SHOW</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="fashion_user1" value={fashion_user1} onChange={handleFashion_user1Change} required />
-              <input type="number" placeholder="Phone no" name="fashion_phno1" value={fashion_phno1} onChange={handleFashion_phno1Change} required />
-            </div>
-            <div className='input-box'>
               <input type="text" placeholder="Participant 2" name="fashion_user2" value={fashion_user2} onChange={handleFashion_user2Change} required />
+            </div>
+            <div className='input-box'>
               <input type="text" placeholder="Participant 3" name="fashion_user3" value={fashion_user3} onChange={handleFashion_user3Change} required />
-            </div>
-            <div className='input-box'>
               <input type="text" placeholder="Participant 4" name="fashion_user4" value={fashion_user4} onChange={handleFashion_user4Change} required />
-              <input type="text" placeholder="Participant 5" name="fashion_user5" value={fashion_user5} onChange={handleFashion_user5Change} required />
             </div>
             <div className='input-box'>
+              <input type="text" placeholder="Participant 5" name="fashion_user5" value={fashion_user5} onChange={handleFashion_user5Change} required />
               <input type="text" placeholder="Participant 6" name="fashion_user6" value={fashion_user6} onChange={handleFashion_user6Change} />
             </div>
+            <div className='input-box'>
+              <input type="number" placeholder="Phone no" name="fashion_phno1" value={fashion_phno1} onChange={handleFashion_phno1Change} required />
+           </div>
 
             <h4>GAMING</h4>
             <div className='input-box'>
               <input type="text" placeholder="Participant 1" name="gaming_user1" value={gaming_user1} onChange={handleGaming_user1Change} required />
-              <input type="number" placeholder="Phone no" name="gaming_phno1" value={gaming_phno1} onChange={handleGaming_phno1Change} required />
-            </div>
-            <div className='input-box'>
               <input type="text" placeholder="Participant 2" name="gaming_user2" value={gaming_user2} onChange={handleGaming_user2Change} required />
             </div>
+            <div className='input-box'>
+              <input type="number" placeholder="Phone no" name="gaming_phno1" value={gaming_phno1} onChange={handleGaming_phno1Change} required />
+            </div>
 
+            <h4>PAYMENT</h4>
+            <div className='input-box'>
+              <img src='payment.jpg' height={20} width={20}/>
+              <input type="number" placeholder='Enter the transaction no' name="trans" value={trans} onChange={handleTransChange} required />
+            </div>
             <a href='./home' onClick={handleSubmit} className='register-btn'>
               Submit
             </a>
