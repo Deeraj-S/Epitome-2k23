@@ -9,6 +9,7 @@ import Registration from './Components/Registration';
 import Events from './Components/Event';
 import About from './Components/About';
 import Schedule from './Components/Schedule';
+import EventRules from './Components/EventRules';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/Registration' element={<Registration />}></Route>
           <Route path='/events' element={<Events />} ></Route>
           <Route path='/Schedule' element={<Schedule />}></Route>
+          <Route path='/event-rules/:id' element={<EventRules />}></Route>
         </Routes>
       </BrowserRouter>
     </>

@@ -1,5 +1,5 @@
 import React from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import image from '../img2.png'
@@ -90,8 +90,8 @@ function Home() {
                 </div>
                 <h1>EVENT POSTERS</h1>
                 <div className="event-box">
-                    <div ref={timeWrap} className="box1"></div>
-                    <div ref={mindMines} className="box2"></div>
+                    <Link to={'/event-rules/timeWrap'}><div ref={timeWrap} className="box1"></div></Link>
+                    <Link to={'/event-rules/mindMines'}><div ref={mindMines} className="box2"></div></Link>
                     <div ref={futureFlash} className="box3"></div>
                     <div ref={turnTheTable} className="box4"></div>
                     <div ref={chronoBeats} className="box5"></div>
