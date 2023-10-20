@@ -76,25 +76,16 @@ function Forms() {
               <label htmlFor='email'>Email</label>
             </div>
 
-
             <div className='user-box'>
               <input type="password" autoComplete='off' name="password" id='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
               {errors.password && touched.password ? (<p className='form-error'>{errors.password}</p>) : null}
               <label htmlFor='password'>Password</label>
             </div>
 
-
             <div className='user-box'>
               <input className='textbox' type="password" autoComplete='off' name="confirm_password" id='confirm_password' value={values.confirm_password} onChange={handleChange} onBlur={handleBlur} required />
               {errors.confirm_password && touched.confirm_password ? (<p className='form-error'>{errors.confirm_password}</p>) : null}
               <label htmlFor='confirm_password'>Confirm Password</label>
-            </div>
-
-
-            <div className='user-box'>
-              <input type="text" autoComplete='off' name="college" id='college' value={values.college} onChange={handleChange} onBlur={handleBlur} required />
-              {errors.college && touched.college ? (<p className='form-error'>{errors.college}</p>) : null}
-              <label htmlFor='college'>College name</label>
             </div>
 
             <a href={link} onClick={handleSubmit}>

@@ -1,12 +1,13 @@
-.general-body{
-    background-image: url(../bghomeimg/bghome2.jpg);
+.event_body{
+    background-image: url(../bghomeimg/cool1.jpg);
     position: fixed;
     width: 100%;
     height: 100vh;
-background-size: cover;
-background-position: center;
+    background-size: cover;
+    background-position: center;
+    
 }
-.general-box {
+.event_box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -18,9 +19,10 @@ background-position: center;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
+    
   }
   
-  .general-box p {
+  .event_box p {
     margin: 0 0 30px;
     padding: 0;
     color: #f5f1f1;
@@ -30,7 +32,18 @@ background-position: center;
     letter-spacing: 1px;
   }
 
-  .general-box h4 {
+  .event_content h4 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #f5f1f1;
+    text-align: left;
+    font-size: 1rem;
+    font-family:sans-serif;
+    letter-spacing: 1px;
+    width: 50%;
+    float: left;
+  }
+  .event_content h3 {
     margin: 0 0 30px;
     padding: 0;
     color: #f5f1f1;
@@ -39,25 +52,24 @@ background-position: center;
     font-family:sans-serif;
     letter-spacing: 1px;
   }
-  
  
 @media screen and (max-width:1200px) {
-    .general-box {
+    .event-box {
         top: 50%;
-        width: 520px;
+        width: 420%;
     }
 }
 
 
 @media screen and (max-width:990px) {
-    .general-box {
+    .event-box {
         top: 40%;
         width: 600px;
     }
 }
 
 @media screen and (max-width:600px) {
-    .general-box {
+    .event-box {
         top: 60%;
         width: 300px;
     }

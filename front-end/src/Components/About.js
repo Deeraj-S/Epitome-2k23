@@ -4,6 +4,7 @@ import Navbar from "./Navbar"
 import '../styles/Contents.css'
 
 function About() {
+<<<<<<< HEAD
     return (
 
         <div className='login-body'>
@@ -18,5 +19,21 @@ function About() {
             </div>
         </div>
     )
+=======
+return (
+    
+    <div className='general-body'>
+        <Navbar />
+    <div className='general-box'>
+    <p>GENERAL RULES</p>
+    <h4>
+    * The team must consist maximum of 15 member.<br/> * The registration fee will be 1500/- per team.<br/> * Only one team from one department.<br/> * College ID and permission letter from 
+Principal/HOD for each team is mandatory.<br/>*  Accommodation will be arranged only on prior information for outstation colleges.<br/> * All events are considered for overall.
+<br/>* Participation points are considered.<br/>* Judge’s decision will be final
+    </h4>
+    </div>
+    </div>
+)
+>>>>>>> c6f8a1e2772f9df6a1e08f5f1a429dc1158806aa
 }
 export default About
