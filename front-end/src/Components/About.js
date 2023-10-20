@@ -6,9 +6,9 @@ import '../styles/Contents.css'
 function About() {
 return (
     
-    <div className='login-body'>
+    <div className='general-body'>
         <Navbar />
-    <div className='login-box'>
+    <div className='general-box'>
     <p>GENERAL RULES</p>
     <h4>
     * The team must consist maximum of 15 member.<br/> * The registration fee will be 1500/- per team.<br/> * Only one team from one department.<br/> * College ID and permission letter from 
