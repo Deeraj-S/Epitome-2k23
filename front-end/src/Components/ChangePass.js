@@ -1,9 +1,9 @@
 import React from "react"
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import '../styles/Forms.css'
 
 function ChangePass() {
-
     const navigate = useNavigate()
     const [otp, setOtp] = useState('')
     const [password, setPassword] = useState('')

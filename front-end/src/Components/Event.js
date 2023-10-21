@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { useRef } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
@@ -25,7 +26,6 @@ function Event() {
         });
     }
 
-
     return (
         <>
             <Navbar />
@@ -47,18 +47,18 @@ function Event() {
                 </div>
                 <h1>EVENT POSTERS</h1>
                 <div className="event-box">
-                    <div ref={timeWrap} className="box1"></div>
-                    <div ref={mindMines} className="box2"></div>
-                    <div ref={futureFlash} className="box3"></div>
-                    <div ref={turnTheTable} className="box4"></div>
-                    <div ref={chronoBeats} className="box5"></div>
-                    <div ref={setllar} className="box6"></div>
-                    <div ref={conunDrum} className="box7"></div>
-                    <div ref={itManager} className="box8"></div>
-                    <div ref={flashForward} className="box9"></div>
-                    <div ref={dumbCharades} className="box10"></div>
-                    <div ref={games} className="box11"></div>
-                    <div ref={paradox} className="box12"></div>
+                    <Link to={'/event-rules/timeWrap'}><div ref={timeWrap} className="box1"></div></Link>
+                    <Link to={'/event-rules/mindMines'}><div ref={mindMines} className="box2"></div></Link>
+                    <Link to={'/event-rules/futureFlash'}><div ref={futureFlash} className="box3"></div></Link>
+                    <Link to={'/event-rules/turnTheTable'}><div ref={turnTheTable} className="box4"></div></Link>
+                    <Link to={'/event-rules/chronoBeats'}><div ref={chronoBeats} className="box5"></div></Link>
+                    <Link to={'/event-rules/stellar'}><div ref={setllar} className="box6"></div></Link>
+                    <Link to={'/event-rules/conunDrum'}><div ref={conunDrum} className="box7"></div></Link>
+                    <Link to={'/event-rules/itManager'}><div ref={itManager} className="box8"></div></Link>
+                    <Link to={'/event-rules/flashForward'}><div ref={flashForward} className="box9"></div></Link>
+                    <Link to={'/event-rules/dumCharades'}><div ref={dumbCharades} className="box10"></div></Link>
+                    <Link to={'/event-rules/games'}><div ref={games} className="box11"></div></Link>
+                    <Link to={'/event-rules/paradox'}><div ref={paradox} className="box12"></div></Link>
                 </div>
             </div>
             <Footer />

@@ -1,140 +1,273 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
-import mystyle from '../styles/EventForms.css'
+import '../styles/EventForms.css'
+import Navbar from './Navbar'
+
 
 function EventRules() {
     const params = useParams()
     let EventData = null
+    let EventParadox = null
 
-    if(params.id === 'timeWrap'){
+    if (params.id === 'timeWrap') {
         EventData = {
-            EventName: 'Time Wrap(IT Quiz)',
-            EventDetails: '*No.of participants : 2. \n * No electronic gadgets are allowed .\n * They should have knowlege on general topics, logos, taglines, coding related topics.\n * There will be 3 rounds.\n ' ,
+            EventName1: 'Time Wrap',
+            EventName2: '(IT Quiz)',
+            EventDetails1: '* No.of participants : 2.',
+            EventDetails2: '* No electronic gadgets are allowed .',
+            EventDetails3: '* They should have knowlege on general topics, logos, taglines, coding related topics.',
+            EventDetails4: '* There will be 3 rounds.',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Sunny Joel Paulose - 9481769484\n Abita Mahabaleshwar Naik - 9606762070\n'
-        }
-    }
-    
-    if(params.id === 'mindMines'){
-        EventData = {
-            EventName: 'MIND MINES(Coding and webdesign)',
-            EventDetails: '* No.of participants : 2 * Participants must be familiar with Java and html,css language * Round will include debugging, web design and implementation. * There will be 4 rounds' ,
-            EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Vijeth - 9400926835 \n Aswhith K J - 9448757292'
+            Eventinfo1: 'Sunny Joel Paulose - 9481769484',
+            Eventinfo2: 'Abita Mahabaleshwar Naik - 9606762070'
         }
     }
 
-    if(params.id === 'futureFlash'){
+    if (params.id === 'mindMines') {
         EventData = {
-            EventName: 'FUTURE FLASH(Movie making)',
-            EventDetails: 'No of Participants: 4(min)-6(max) members. \n *Shotfilm must be 3-7 minutes long. \n* Film can be created using Phone or Digital Camara. \n* Gopro is not allowed.\n *External video (from youtube,etc) cannot be added in shotfilm.',
+            EventName1: 'MIND MINES',
+            EventName2: '(Coding and webdesign)',
+            EventDetails1: '* No.of participants : 2 ',
+            EventDetails2: '* Participants must be familiar with Java and html,css language.',
+            EventDetails3: '* Round will include debugging, web design and implementation.',
+            EventDetails4: '* There will be 4 rounds',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Abdulla Nishad PM - 9633164690 \n Om Prakash Jangid - 9571305470'
+            Eventinfo1: 'Vijeth - 9400926835',
+            Eventinfo2: 'Aswhith K J - 9448757292'
         }
     }
 
-    if(params.id === 'turnTheTable'){
+    if (params.id === 'futureFlash') {
         EventData = {
-            EventName: 'TURN THE TABLE(IT Debate)',
-            EventDetails: '* No. of Participants: 1 member. \n *Usage of offensive words are strictly prohibited. \n* They should be ready to take up any role. \n* There will be 3 rounds' ,
+            EventName1: 'FUTURE FLASH',
+            EventName2: '(Movie making)',
+            EventDetails1: '* No of Participants: 4(min)-6(max) members.',
+            EventDetails2: '* Shortfilm must be 3-7 minutes long.',
+            EventDetails3: '* Film can be created using Phone or Digital Camera.',
+            EventDetails4: '* Gopro is not allowed.',
+            EventDetails5: '* External video (from youtube,etc) cannot be added in shotfilm.',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Raksha Aithappa Shetty - 8330883303 \nAnusha Rose- 6363336587'
+            Eventinfo1: 'Abdulla Nishad PM - 9633164690',
+            Eventinfo2: 'Om Prakash Jangid - 9571305470'
         }
     }
 
-    if(params.id === 'chronoBeats'){
+    if (params.id === 'turnTheTable') {
         EventData = {
-            EventName: 'CHRONOBEATS(IT Quiz)',
-            EventDetails: '* No.of Participants: 5(min)-6(max) \n* The choice of the theme is entirely up to the teams.\n* The time limit for each performance is 4 minutes, with an additional 1 minute allocated for setup before the performance begins. \n* Participants must be aware that any obscene or offensive acts are completely unacceptable and will lead to immediate disqualification.',
+            EventName1: 'TURN THE TABLE',
+            EventName2: '(IT Debate)',
+            EventDetails1: '* No. of Participants: 1 member.',
+            EventDetails2: '* Usage of offensive words are strictly prohibited.',
+            EventDetails3: '* They should be ready to take up any role.',
+            EventDetails4: '* There will be 3 rounds',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Rashmin - 7892998798\n Akashy Kumar - 9740791523\n'
+            Eventinfo1: 'Raksha Aithappa Shetty - 8330883303',
+            Eventinfo2: 'Anusha Rose- 6363336587',
         }
     }
 
-    if(params.id === 'stellar'){
+    if (params.id === 'chronoBeats') {
         EventData = {
-            EventName: 'STELLAR(Fashion show)',
-            EventDetails: '* No.of Participants: 5(min)-6(max) \n* The theme for the Fashion Show is “Celestial: Fashions Voyage from the Stars to Earth” \n* Each team will have a total performance time of 7+2 minutes, including both setup and performance. \n* Participants must carry their tracks/audio files in a pen drive and also provide a copy in their Google Drive.\n* Participants are encouraged to submit their own digital backdrop file in HD format before the event. These will be displayed during their presentation. \n* All costumes are permitted as long as they maintain decency. No vulgarity in the costumes (e.g., sleeveless, backless, short dresses, etc.) is allowed. Violation of this rule will result in disqualification.\n* Professionally made or rented costumes are not permitted. Participants must use their own creativity and skills to create the costumes.\n* Props such as fire, powder, water, light, and glass are strictly prohibited.\n',
+            EventName1: 'CHRONOBEATS',
+            EventName2: '(IT Quiz)',
+            EventDetails1: '* No.of Participants: 5(min)-6(max)',
+            EventDetails2: '* The choice of the theme is entirely up to the teams.',
+            EventDetails3: '* The time limit for each performance is 4 minutes, with an additional 1 minute allocated for setup before the performance begins.',
+            EventDetails4: '* Participants must be aware that any obscene or offensive acts are completely unacceptable and will lead to immediate disqualification.',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Alroy Menezes - 8073128251 \nReiona Dsouza – 7498440933\n'
+            Eventinfo1: 'Rashmi n - 7892998798',
+            Eventinfo2: 'Akashy Kumar - 9740791523',
         }
     }
 
-    if(params.id === 'conunDrum'){
-        EventData = {
-            EventName: 'CONUNDRUM(Treasure hunt)',
-            EventDetails: '* No.of Participents: 2(min)-3(max) \n* Be prepared with puzzle solving knowledge, riddles, knowledge about technologies. \n* Location will be whole campus. \n* There will be 4 rounds\n' ,
+    if (params.id === 'stellar') {
+        EventParadox = {
+            EventName1: 'STELLAR',
+            EventName2: '(Fashion show)',
+            EventDetails1: '* No.of Participants: 5(min)-6(max)',
+            EventDetails2: '* The theme for the Fashion Show is “Celestial: Fashions Voyage from the Stars to Earth”',
+            EventDetails3: '* Each team will have a total performance time of 7+2 minutes, including both setup and performance.',
+            EventDetails4: '* Participants must carry their tracks/audio files in a pen drive and also provide a copy in their Google Drive.',
+            EventDetails5: '* Participants are encouraged to submit their own digital backdrop file in HD format before the event. These will be displayed during their presentation.',
+            EventDetails6: '* All costumes are permitted as long as they maintain decency. No vulgarity in the costumes (e.g., sleeveless, backless, short dresses, etc.) is allowed. Violation of this rule will result in disqualification.',
+            EventDetails7: '* Professionally made or rented costumes are not permitted. Participants must use their own creativity and skills to create the costumes.',
+            EventDetails8: '* Props such as fire, powder, water, light, and glass are strictly prohibited.',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Ashika Sheikh - 9778397497 \n Srilakshmi Shenoy - 8592901487\n'
+            Eventinfo1: 'Alroy Menezes - 8073128251',
+            Eventinfo2: 'Reiona Dsouza – 7498440933',
         }
     }
 
-    if(params.id === 'itManager'){
+    if (params.id === 'conunDrum') {
         EventData = {
-            EventName: ' IT PHARAOH (IT Manager)',
-            EventDetails: '* No.of Participants: 1.\n* Dress code is "Formal attire".\n* Participants should bring their own laptops.\n* Rounds will consist of apptitude, mock press, case study, stress interview.\n* There will be 5 rounds\n' ,
+            EventName1: 'CONUNDRUM',
+            EventName2: '(Treasure hunt)',
+            EventDetails1: '* No.of Participents: 2(min)-3(max)',
+            EventDetails2: '* Be prepared with puzzle solving knowledge, riddles, knowledge about technologies.',
+            EventDetails3: '* Location will be whole campus.',
+            EventDetails4: '* There will be 4 rounds',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Anvitha Alva - 8310400951\n Kavana - 8431395996 '
+            Eventinfo1: 'Ashika Sheikh - 9778397497',
+            Eventinfo2: 'Srilakshmi Shenoy - 8592901487',
         }
     }
 
-    if(params.id === 'flashForward'){
+    if (params.id === 'itManager') {
         EventData = {
-            EventName: 'FLASH FORWARD(Photography)',
-            EventDetails: '*No.of Participant: 1.\n*Participants should get their equipments like laptop, camera, mobile, tripod etc.\n* They should be familar with eiditing.\n* There will be 4 rounds\n' ,
+            EventName1: ' IT PHARAOH ',
+            EventName2: '(IT Manager)',
+            EventDetails1: '* No.of Participants: 1.\n\n\n\n',
+            EventDetails2: '* Dress code is "Formal attire".',
+            EventDetails3: '* Participants should bring their own laptops.',
+            EventDetails4: '* Rounds will consist of apptitude, mock press, case study, stress interview.',
+            EventDetails5: '* There will be 5 rounds',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Chaithanya KS - 8050244505 \n Joyce Smitha Pereira - 7349756316\n'
+            Eventinfo1: 'Anvitha Alva - 8310400951',
+            Eventinfo2: 'Kavana - 8431395996'
         }
     }
 
-    if(params.id === 'dumCharades'){
+    if (params.id === 'flashForward') {
         EventData = {
-            EventName: 'DUMCHARADES(Pot Pouri)',
-            EventDetails: '* No.of Participant: 3. \n*Participants are required to possess a well-rounded knowledge of both cinema, including movies and actors, as well as a solid understanding of general computer knowledge and current trends and technologies in the IT field. \n* Teams must maintain respect and avoid any offensive gestures or actions. \n* There will be 3 rounds.',
+            EventName1: 'FLASH FORWARD',
+            EventName2: '(Photography)',
+            EventDetails1: '* No.of Participant: 1.\n\n\n\n',
+            EventDetails2: '* Participants should get their equipments like laptop, camera, mobile, tripod etc.',
+            EventDetails3: '* They should be familar with editing.',
+            EventDetails4: '* There will be 4 rounds',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Vyalary Juni Vaz - 9481818835\n Rohit Mathew - 9072169986\n'
+            Eventinfo1: 'Chaithanya KS - 8050244505 ',
+            Eventinfo2: 'Joyce Smitha Pereira - 7349756316'
         }
     }
 
-    if(params.id === 'games'){
+    if (params.id === 'dumCharades') {
         EventData = {
-            EventName: 'WARLORDS(Gaming)',
-            EventDetails: '* No.of Participants: 2.\n* No hacks, points depend on kills and positions.\n* Participants should bring headphones.' ,
+            EventName1: 'DELOREAN MUTES',
+            EventName2: '(Dumb Charades)',
+            EventDetails1: '* No.of Participant: 3. \n \n \n',
+            EventDetails2: '* Participants are required to possess a well-rounded knowledge of both cinema, including movies and actors, as well as a solid understanding of general computer knowledge and current trends and technologies in the IT field.',
+            EventDetails3: '* Teams must maintain respect and avoid any offensive gestures or actions.',
+            EventDetails4: '* There will be 3 rounds.',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Abhay Kulkarni - 9962797068\n Brijesh - 9766465683\n'
+            Eventinfo1: 'Vyalary Juni Vaz - 9481818835',
+            Eventinfo2: 'Rohit Mathew - 9072169986'
         }
     }
 
-    if(params.id === 'paradox'){
+    if (params.id === 'games') {
         EventData = {
-            EventName: 'PARADOX(Logo Recreation and Meme making)',
-            EventDetails: '* No.of Paticipants: 1.\n* Participant should get their own laptop.\n* Only use the logo that is being provided by the team.\n* Any offline medium can be used to recreate the logo.\n*The theme for IT MEME Making will be provided.\n*Your meme must be appropriate for all ages. This means no religious, political violence or hate speech.\n*Your meme must be relevant to the theme that is being provided.\n* There will be 2 rounds.' ,
+            EventName1: 'WARLORDS',
+            EventName2: '(Gaming)',
+            EventDetails1: '* No.of Participants: 2.\n\n',
+            EventDetails2: '* No hacks, points depend on kills and positions.',
+            EventDetails3: '* Participants should bring headphones.',
             EventHeads: 'EVENT HEADS',
-            Eventinfo: 'Ashritha Rai - 7204097278\n Anvith G - 9483335593\n'
+            Eventinfo1: 'Abhay Kulkarni - 9962797068',
+            Eventinfo2: 'Brijesh - 9766465683'
         }
     }
-    return(
+
+    if (params.id === 'paradox') {
+        EventParadox = {
+            EventName1: 'PARADOX',
+            EventName2: '(Logo Recreation and Meme making)',
+            EventDetails1: '* No.of Paticipants: 1.',
+            EventDetails2: '* Participant should get their own laptop.',
+            EventDetails3: '* Only use the logo that is being provided by the team.',
+            EventDetails4: '* Any offline medium can be used to recreate the logo.',
+            EventDetails5: '* The theme for IT MEME Making will be provided.',
+            EventDetails6: '* Your meme must be appropriate for all ages. This means no religious, political violence or hate speech.',
+            EventDetails7: '* Your meme must be relevant to the theme that is being provided.',
+            EventDetails8: '* There will be 2 rounds.',
+            EventHeads: 'EVENT HEADS',
+            Eventinfo1: 'Ashritha Rai - 7204097278',
+            Eventinfo2: 'Anvith G - 9483335593'
+        }
+    }
+
+    return (
         <>
-        <p>Event Rules : </p>
-        {
-            EventData != null ?
-            <>                  
-                
-            <div className={mystyle.event_body}>
-                    <div className={mystyle.event_box}>
-                        <p>{EventData.EventName}</p>
-                        <div className={mystyle.event_content}>
-                            <h4>{EventData.EventDetails}</h4>
-                            <h3>{EventData.EventHeads}</h3>
-                            <h4>{EventData.Eventinfo}</h4>
+            <Navbar />
+            {
+                params.id == null ?
+                    <>
+                        <div className="details-body">
+                            <div className="details-box">
+                                <div className='details-paragraph'>
+                                    <p className='para-one'>EVENT NAME</p>
+                                </div>
+                                <div className="details-content">
+                                    <h4>Click on the Event Posters to get more details on event Rules</h4>
+                                    <h3>EVENT HEADS</h3>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </>
+                    : ''
+            }
 
-            </>
-            :''
-        }
+            {
+                EventData != null ?
+                    <>
+                        <div className="details-body">
+
+                            <div className="details-box">
+                                <div className='details-paragraph'>
+                                    <p className='para-one'>{EventData.EventName1}</p>
+                                    <p >{EventData.EventName2}</p>
+                                </div>
+                                <div className="details-content">
+                                    <h4>{EventData.EventDetails1}</h4>
+                                    <h4>{EventData.EventDetails2}</h4>
+                                    <h4>{EventData.EventDetails3}</h4>
+                                    <h4>{EventData.EventDetails4}</h4>
+                                    <h4>{EventData.EventDetails5}</h4>
+                                    <h4>{EventData.EventDetails6}</h4>
+                                    <h4>{EventData.EventDetails7}</h4>
+                                    <h4>{EventData.EventDetails8}</h4>
+                                    <h3>{EventData.EventHeads}</h3>
+                                    <h4>{EventData.Eventinfo1}</h4>
+                                    <h4>{EventData.Eventinfo2}</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </>
+                    : ''
+            }
+
+            {
+                EventParadox != null ?
+                    <>
+                        <div className="paradox-body">
+
+                            <div className="paradox-box">
+                                <div className='paradox-paragraph'>
+                                    <p>{EventParadox.EventName1}</p>
+                                    <p >{EventParadox.EventName2}</p>
+                                </div>
+                                <div className="paradox-content">
+                                    <h4>{EventParadox.EventDetails1}</h4>
+                                    <h4>{EventParadox.EventDetails2}</h4>
+                                    <h4>{EventParadox.EventDetails3}</h4>
+                                    <h4>{EventParadox.EventDetails4}</h4>
+                                    <h4>{EventParadox.EventDetails5}</h4>
+                                    <h4>{EventParadox.EventDetails6}</h4>
+                                    <h4>{EventParadox.EventDetails7}</h4>
+                                    <h4>{EventParadox.EventDetails8}</h4>
+                                    <h3>{EventParadox.EventHeads}</h3>
+                                    <h4>{EventParadox.Eventinfo1}</h4>
+                                    <h4>{EventParadox.Eventinfo2}</h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </>
+                    : ''
+            }
         </>
     )
 }
+
 export default EventRules

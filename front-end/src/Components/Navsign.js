@@ -3,17 +3,12 @@ import '../styles/NavbarStyles.css'
 import logo from '../images/logo.png'
 
 class Navsign extends Component {
-    state = { clicked: false };
-    handleClick = () => {
-        this.setState({ clicked: !this.state.clicked })
-    }
+
     render() {
         return (
             <>
                 <nav>
-                    <a href="/">
-                        <img src={logo} alt="logo" className="logo" />
-                    </a>
+                    <img src={logo} alt="logo" className="logo" />
                 </nav >
             </>
         )

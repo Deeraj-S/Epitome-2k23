@@ -215,3 +215,12 @@
   font-size: 0.9rem;
   color: #b22b27;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  border: 1px solid black;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 20px #000 inset;
+  zoom: 0;
+}

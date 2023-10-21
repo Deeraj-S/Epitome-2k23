@@ -115,21 +115,6 @@ h1 {
     height: 23rem;
 }
 
-.box1,
-.box2,
-.box3,
-.box4,
-.box5,
-.box6,
-.box7,
-.box8,
-.box9,
-.box10,
-.box11,
-.box12 :hover {
-    cursor: pointer;
-}
-
 .box1 {
     background-image: url(../images/Timewarp.png);
     background-size: cover;

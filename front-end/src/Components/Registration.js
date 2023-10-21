@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import '../styles/RegForms.css'
+import image from '../payment.jpg'
 
 function Form() {
-  const [college_name,setcollege_name] = useState("");
+  const [college_name, setcollege_name] = useState("");
   const handlecollege_nameChange = (event) => {
     setcollege_name(event.target.value);
   }
@@ -205,14 +205,14 @@ function Form() {
     setgaming_user2(event.target.value);
   };
 
-  const [trans,settrans]=useState("");
-  const handleTransChange = (event) =>{
+  const [trans, settrans] = useState("");
+  const handleTransChange = (event) => {
     settrans(event.target.value);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("college_name : ",college_name);
+    console.log("college_name : ", college_name);
     console.log("quiz_user1 : ", quiz_user1);
     console.log("quiz_phno1 : ", quiz_phno1);
     console.log("quiz_user2 : ", quiz_user2);
@@ -271,7 +271,7 @@ function Form() {
     console.log("gaaming_phno1 : ", gaming_phno1);
     console.log("gaming_user2 : ", gaming_user2);
 
-    console.log("trans : ",trans);
+    console.log("trans : ", trans);
 
   };
   return (
@@ -297,7 +297,7 @@ function Form() {
               <input type="text" placeholder="Participant 2" name="quiz_user2" value={quiz_user2} onChange={handleQuiz_user2Change} required />
             </div>
             <div className='reg-input-box'>
-            <input type="number" placeholder="Phone no" name="quiz_phno1" value={quiz_phno1} onChange={handleQuiz_phno1Change} required />
+              <input type="number" placeholder="Phone no" name="quiz_phno1" value={quiz_phno1} onChange={handleQuiz_phno1Change} required />
             </div>
 
             <h4>CODING AND WEB DESIGN</h4>
@@ -344,7 +344,7 @@ function Form() {
               <input type="text" placeholder="Participant 6" name="thematic_user6" value={thematic_user6} onChange={handleThematic_user6Change} required />
             </div>
             <div className='reg-input-box'>
-            <input type="number" placeholder="Phone no" name="thematic_phno1" value={thematic_phno1} onChange={handleThematic_phno1Change} required />
+              <input type="number" placeholder="Phone no" name="thematic_phno1" value={thematic_phno1} onChange={handleThematic_phno1Change} required />
             </div>
 
             <h4>MOVIE MAKING</h4>
@@ -381,7 +381,7 @@ function Form() {
             </div>
             <div className='reg-input-box'>
               <input type="number" placeholder="Phone no" name="debate_phno1" value={debate_phno1} onChange={handleDebate_phno1Change} required />
-              </div>
+            </div>
 
             <h4>FASHION SHOW</h4>
             <div className='reg-input-box'>
@@ -398,7 +398,7 @@ function Form() {
             </div>
             <div className='reg-input-box'>
               <input type="number" placeholder="Phone no" name="fashion_phno1" value={fashion_phno1} onChange={handleFashion_phno1Change} required />
-           </div>
+            </div>
 
             <h4>GAMING</h4>
             <div className='reg-input-box'>
@@ -411,7 +411,7 @@ function Form() {
 
             <h4>PAYMENT</h4>
             <div className='reg-input-box'>
-              <img src='payment.jpg' height={200} width={200}/>
+              <img src={image} height={200} width={200} alt='Payment' />
             </div>
             <div className='reg-input-box'>
               <input type="number" placeholder='Enter the transaction no' name="trans" value={trans} onChange={handleTransChange} required />

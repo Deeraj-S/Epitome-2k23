@@ -23,8 +23,9 @@ function App() {
           <Route path='/newpass' element={<ChangePass />}></Route>
           <Route path='/About' element={<About />}></Route>
           <Route path='/Registration' element={<Registration />}></Route>
-          <Route path='/events' element={<Events />} ></Route>
+          <Route path='/Events' element={<Events />} ></Route>
           <Route path='/Schedule' element={<Schedule />}></Route>
+          <Route path='/event-rules' element={<EventRules />}></Route>
           <Route path='/event-rules/:id' element={<EventRules />}></Route>
         </Routes>
       </BrowserRouter>
