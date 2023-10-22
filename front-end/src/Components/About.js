@@ -1,8 +1,18 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import Navbar from "./Navbar"
 import '../styles/About.css'
 
+
 function About() {
+    const navigate = useNavigate()
+    useEffect(() => {
+        const token = localStorage.getItem('TOKEN')
+        if (!token) {
+            navigate('/signin')
+        }
+    })
     return (
         <>
             <Navbar />

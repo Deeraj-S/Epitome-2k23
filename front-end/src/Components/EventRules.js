@@ -1,13 +1,22 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
+import { useEffect } from 'react'
 import '../styles/EventForms.css'
 import Navbar from './Navbar'
 
 
 function EventRules() {
+    const navigate = useNavigate()
     const params = useParams()
     let EventData = null
     let EventParadox = null
+
+    useEffect(() => {
+        const token = localStorage.getItem('TOKEN')
+        if (!token) {
+            navigate('/signin')
+        }
+    })
 
     if (params.id === 'timeWrap') {
         EventData = {

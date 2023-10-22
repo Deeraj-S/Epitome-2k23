@@ -14,7 +14,7 @@ function ChangePass() {
     const navigate = useNavigate()
     const link = ''
 
-    const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+    const { values, touched, errors, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
         validationSchema: changePassSchema,
         onSubmit: (values) => {
