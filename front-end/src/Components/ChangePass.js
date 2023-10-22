@@ -1,56 +1,61 @@
 import React from "react"
-import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import { useFormik } from "formik"
+import { changePassSchema } from "../schemas/signupSchema"
 import '../styles/Forms.css'
+import Navsign from "./Navsign"
+import axios from "axios"
 
+const initialValues = {
+    otp: "",
+    password: "",
+}
 function ChangePass() {
     const navigate = useNavigate()
-    const [otp, setOtp] = useState('')
-    const [password, setPassword] = useState('')
+    const link = ''
 
-    const handleSubmit = () => {
-        console.log(otp, password)
-        /*axios.post('http://localhost:5000/submit-otp',
-            {
-                otp: otp,
-                password: password,
-            })
-            .then(res => {
-                console.log(res.data)
+    const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+        initialValues: initialValues,
+        validationSchema: changePassSchema,
+        onSubmit: (values) => {
+            console.log(values)
+            axios.post('http://localhost:5000/changepass', {
+
+                otp: values.otp,
+                password: values.password,
+
+            }).then((res) => {
                 if (res.data.code === 200) {
+                    alert("Password Updated Successfully")
                     navigate('/signin')
-                    alert('Password Updated.')
-                } else {
-                    alert('server err / wrong OTP')
                 }
-            }).catch(err => {
-                console.log(err)
-            })*/
-    }
-    const handleOtpChange = (event) => {
-        setOtp(event.target.value);
-    };
+                if (res.data.code === 404) {
+                    alert('Invalid OTP')
+                }
+            }).catch((err) => {
 
-    const handlepassChange = (event) => {
-        setPassword(event.target.value);
-    };
-
+            })
+        }
+    });
 
     return (
         <div className='login-body'>
+            <Navsign />
             <div className='login-box'>
                 <p>Forget password</p>
 
                 <form onSubmit={handleSubmit}>
                     <div className='user-box'>
-                        <input type="text" name="otp" value={otp} onChange={handleOtpChange} required />
-                        <label>OTP</label>
+                        <input type="text" name="otp" id='otp' value={values.otp} onChange={handleChange} required />
+                        {errors.otp && touched.otp ? (<p className="form-error">{errors.otp}</p>) : null}
+                        <label htmlFor="otp">OTP</label>
                     </div>
                     <div className='user-box'>
-                        <input type="password" name="password" value={password} onChange={handlepassChange} required />
-                        <label>NEW PASSWORD</label>
+                        <input type="password" name="password" id="password" value={values.password} onChange={handleChange} required />
+                        {errors.password && touched.password ? (<p className="form-error">{errors.password}</p>) : null}
+                        <label htmlFor="password">NEW PASSWORD</label>
                     </div>
-                    <a href='./SignIn' onClick={handleSubmit}>
+                    <a href={link} onClick={handleSubmit}>
                         <span></span>
                         <span></span>
                         <span></span>

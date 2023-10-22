@@ -69,7 +69,7 @@ function EventRules() {
     if (params.id === 'chronoBeats') {
         EventData = {
             EventName1: 'CHRONOBEATS',
-            EventName2: '(IT Quiz)',
+            EventName2: '(THEMATIC DANCE)',
             EventDetails1: '* No.of Participants: 5(min)-6(max)',
             EventDetails2: '* The choice of the theme is entirely up to the teams.',
             EventDetails3: '* The time limit for each performance is 4 minutes, with an additional 1 minute allocated for setup before the performance begins.',
@@ -244,7 +244,7 @@ function EventRules() {
 
                             <div className="paradox-box">
                                 <div className='paradox-paragraph'>
-                                    <p>{EventParadox.EventName1}</p>
+                                    <p className='para-one'>{EventParadox.EventName1}</p>
                                     <p >{EventParadox.EventName2}</p>
                                 </div>
                                 <div className="paradox-content">

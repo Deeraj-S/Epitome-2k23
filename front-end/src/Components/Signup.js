@@ -12,7 +12,6 @@ const initialValues = {
   email: "",
   password: "",
   confirm_password: "",
-  college: "",
 };
 
 function Forms() {

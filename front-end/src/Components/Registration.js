@@ -3,8 +3,12 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import '../styles/RegForms.css'
 import image from '../payment.jpg'
+import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Form() {
+  const navigate = useNavigate()
+  const link = ''
   const [college_name, setcollege_name] = useState("");
   const handlecollege_nameChange = (event) => {
     setcollege_name(event.target.value);
@@ -273,6 +277,70 @@ function Form() {
 
     console.log("trans : ", trans);
 
+    axios.post('http://localhost:5000/register', {
+      college_name: college_name,
+      quiz_user1: quiz_user1,
+      quiz_user2: quiz_user2,
+      quiz_phno1: quiz_phno1,
+      manager_user1: manager_user1,
+      manager_phno1: manager_phno1,
+      code_user1: code_user1,
+      code_user2: code_user2,
+      code_phno1: code_phno1,
+      treasure_user1: treasure_user1,
+      treasure_user2: treasure_user2,
+      treasure_phno1: treasure_phno1,
+      photography_user1: photography_user1,
+      photography_phno1: photography_phno1,
+      logo_user1: logo_user1,
+      logo_phno1: logo_phno1,
+      thematic_user1: thematic_user1,
+      thematic_user2: thematic_user2,
+      thematic_user3: thematic_user3,
+      thematic_user4: thematic_user4,
+      thematic_user5: thematic_user5,
+      thematic_user6: thematic_user6,
+      thematic_phno1: thematic_phno1,
+      pot_user1: pot_user1,
+      pot_user2: pot_user2,
+      pot_user3: pot_user3,
+      pot_phno1: pot_phno1,
+      movie_user1: movie_user1,
+      movie_user2: movie_user2,
+      movie_user3: movie_user3,
+      movie_user4: movie_user4,
+      movie_user5: movie_user5,
+      movie_user6: movie_user6,
+      movie_phno1: movie_phno1,
+      fashion_user1: fashion_user1,
+      fashion_user2: fashion_user2,
+      fashion_user3: fashion_user3,
+      fashion_user4: fashion_user4,
+      fashion_user5: fashion_user5,
+      fashion_user6: fashion_user6,
+      fashion_phno1: fashion_phno1,
+      debate_user1: debate_user1,
+      debate_user2: debate_user2,
+      debate_phno1: debate_phno1,
+      gaming_user1: gaming_user1,
+      gaming_user2: gaming_user2,
+      gaming_phno1: gaming_phno1,
+      trans: trans
+    }).then((res) => {
+      if (res.data.code === 200) {
+        alert("Registration Successful")
+        navigate('/')
+
+      }
+
+      if (res.data.code === 500) {
+        alert("All field must be entered")
+      }
+
+    }).catch((err) => {
+
+    })
+
   };
   return (
     <>
@@ -283,130 +351,130 @@ function Form() {
           <form onSubmit={handleSubmit}>
             <h4>COLLEGE NAME</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="College name" name="college_name" value={college_name} onChange={handlecollege_nameChange} required />
+              <input type="text" autoComplete='off' placeholder="College name" name="college_name" value={college_name} onChange={handlecollege_nameChange} required />
             </div>
             <h4>IT MANAGER</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="manager_user1" value={manager_user1} onChange={handleManager_user1Change} required />
-              <input type="number" placeholder="Phone no" name="manager_phno1" value={manager_phno1} onChange={handleManager_phno1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="manager_user1" value={manager_user1} onChange={handleManager_user1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="manager_phno1" value={manager_phno1} onChange={handleManager_phno1Change} required />
             </div>
 
             <h4>IT QUIZ</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="quiz_user1" value={quiz_user1} onChange={handleQuiz_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="quiz_user2" value={quiz_user2} onChange={handleQuiz_user2Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="quiz_user1" value={quiz_user1} onChange={handleQuiz_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="quiz_user2" value={quiz_user2} onChange={handleQuiz_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="quiz_phno1" value={quiz_phno1} onChange={handleQuiz_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="quiz_phno1" value={quiz_phno1} onChange={handleQuiz_phno1Change} required />
             </div>
 
             <h4>CODING AND WEB DESIGN</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="code_user1" value={code_user1} onChange={handleCode_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="code_user2" value={code_user2} onChange={handleCode_user2Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="code_user1" value={code_user1} onChange={handleCode_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="code_user2" value={code_user2} onChange={handleCode_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="code_phno1" value={code_phno1} onChange={handleCode_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="code_phno1" value={code_phno1} onChange={handleCode_phno1Change} required />
             </div>
 
             <h4>TREASURE HUNT </h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="treasure_user1" value={treasure_user1} onChange={handleTreasure_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="treasure_user2" value={treasure_user2} onChange={handleTreasure_user2Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="treasure_user1" value={treasure_user1} onChange={handleTreasure_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="treasure_user2" value={treasure_user2} onChange={handleTreasure_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="treasure_phno1" value={treasure_phno1} onChange={handleTreasure_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="treasure_phno1" value={treasure_phno1} onChange={handleTreasure_phno1Change} required />
             </div>
 
             <h4>PHOTOGRAPHY </h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="photography_user1" value={photography_user1} onChange={handlePhotography_user1Change} required />
-              <input type="number" placeholder="Phone no" name="photography_phno1" value={photography_phno1} onChange={handlePhotography_phno1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="photography_user1" value={photography_user1} onChange={handlePhotography_user1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="photography_phno1" value={photography_phno1} onChange={handlePhotography_phno1Change} required />
             </div>
 
             <h4>LOGO RECREATION</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="logo_user1" value={logo_user1} onChange={handleLogo_user1Change} required />
-              <input type="number" placeholder="Phone no" name="logo_phno1" value={logo_phno1} onChange={handleLogo_phno1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="logo_user1" value={logo_user1} onChange={handleLogo_user1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="logo_phno1" value={logo_phno1} onChange={handleLogo_phno1Change} required />
             </div>
 
             <h4>THEMATIC DANCE</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="thematic_user1" value={thematic_user1} onChange={handleThematic_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="thematic_user2" value={thematic_user2} onChange={handleThematic_user2Change} />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="thematic_user1" value={thematic_user1} onChange={handleThematic_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="thematic_user2" value={thematic_user2} onChange={handleThematic_user2Change} />
             </div>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 3" name="thematic_user3" value={thematic_user3} onChange={handleThematic_user3Change} required />
-              <input type="text" placeholder="Participant 4" name="thematic_user4" value={thematic_user4} onChange={handleThematic_user4Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 3" name="thematic_user3" value={thematic_user3} onChange={handleThematic_user3Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 4" name="thematic_user4" value={thematic_user4} onChange={handleThematic_user4Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 5" name="thematic_user5" value={thematic_user5} onChange={handleThematic_user5Change} required />
-              <input type="text" placeholder="Participant 6" name="thematic_user6" value={thematic_user6} onChange={handleThematic_user6Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 5" name="thematic_user5" value={thematic_user5} onChange={handleThematic_user5Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 6" name="thematic_user6" value={thematic_user6} onChange={handleThematic_user6Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="thematic_phno1" value={thematic_phno1} onChange={handleThematic_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="thematic_phno1" value={thematic_phno1} onChange={handleThematic_phno1Change} required />
             </div>
 
             <h4>MOVIE MAKING</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="movie_user1" value={movie_user1} onChange={handleMovie_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="movie_user2" value={movie_user2} onChange={handleMovie_user2Change} />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="movie_user1" value={movie_user1} onChange={handleMovie_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="movie_user2" value={movie_user2} onChange={handleMovie_user2Change} />
             </div>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 3" name="movie_user3" value={movie_user3} onChange={handleMovie_user3Change} required />
-              <input type="text" placeholder="Participant 4" name="movie_user4" value={movie_user4} onChange={handleMovie_user4Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 3" name="movie_user3" value={movie_user3} onChange={handleMovie_user3Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 4" name="movie_user4" value={movie_user4} onChange={handleMovie_user4Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 5" name="movie_user5" value={movie_user5} onChange={handleMovie_user5Change} required />
-              <input type="text" placeholder="Participant 6" name="movie_user6" value={movie_user6} onChange={handleMovie_user6Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 5" name="movie_user5" value={movie_user5} onChange={handleMovie_user5Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 6" name="movie_user6" value={movie_user6} onChange={handleMovie_user6Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="movie_phno1" value={movie_phno1} onChange={handleMovie_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="movie_phno1" value={movie_phno1} onChange={handleMovie_phno1Change} required />
             </div>
 
-            <h4>POT POURI</h4>
+            <h4>Dumb Charades</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="pot_user1" value={pot_user1} onChange={handlePot_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="pot_use2" value={pot_user2} onChange={handlePot_user2Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="pot_user1" value={pot_user1} onChange={handlePot_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="pot_use2" value={pot_user2} onChange={handlePot_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 3" name="pot_user3" value={pot_user3} onChange={handlePot_user3Change} required />
-              <input type="number" placeholder="Phone no" name="pot_phno1" value={pot_phno1} onChange={handlePot_phno1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 3" name="pot_user3" value={pot_user3} onChange={handlePot_user3Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="pot_phno1" value={pot_phno1} onChange={handlePot_phno1Change} required />
             </div>
 
             <h4>IT DEBATE</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="debate_user1" value={debate_user1} onChange={handleDebate_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="debate_user2" value={debate_user2} onChange={handleDebate_user2Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="debate_user1" value={debate_user1} onChange={handleDebate_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="debate_user2" value={debate_user2} onChange={handleDebate_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="debate_phno1" value={debate_phno1} onChange={handleDebate_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="debate_phno1" value={debate_phno1} onChange={handleDebate_phno1Change} required />
             </div>
 
             <h4>FASHION SHOW</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="fashion_user1" value={fashion_user1} onChange={handleFashion_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="fashion_user2" value={fashion_user2} onChange={handleFashion_user2Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="fashion_user1" value={fashion_user1} onChange={handleFashion_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="fashion_user2" value={fashion_user2} onChange={handleFashion_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 3" name="fashion_user3" value={fashion_user3} onChange={handleFashion_user3Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 3" name="fashion_user3" value={fashion_user3} onChange={handleFashion_user3Change} required />
               <input type="text" placeholder="Participant 4" name="fashion_user4" value={fashion_user4} onChange={handleFashion_user4Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 5" name="fashion_user5" value={fashion_user5} onChange={handleFashion_user5Change} required />
-              <input type="text" placeholder="Participant 6" name="fashion_user6" value={fashion_user6} onChange={handleFashion_user6Change} />
+              <input type="text" autoComplete='off' placeholder="Participant 5" name="fashion_user5" value={fashion_user5} onChange={handleFashion_user5Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 6" name="fashion_user6" value={fashion_user6} onChange={handleFashion_user6Change} />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="fashion_phno1" value={fashion_phno1} onChange={handleFashion_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="fashion_phno1" value={fashion_phno1} onChange={handleFashion_phno1Change} required />
             </div>
 
             <h4>GAMING</h4>
             <div className='reg-input-box'>
-              <input type="text" placeholder="Participant 1" name="gaming_user1" value={gaming_user1} onChange={handleGaming_user1Change} required />
-              <input type="text" placeholder="Participant 2" name="gaming_user2" value={gaming_user2} onChange={handleGaming_user2Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 1" name="gaming_user1" value={gaming_user1} onChange={handleGaming_user1Change} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="gaming_user2" value={gaming_user2} onChange={handleGaming_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder="Phone no" name="gaming_phno1" value={gaming_phno1} onChange={handleGaming_phno1Change} required />
+              <input type="number" autoComplete='off' placeholder="Phone no" name="gaming_phno1" value={gaming_phno1} onChange={handleGaming_phno1Change} required />
             </div>
 
             <h4>PAYMENT</h4>
@@ -414,9 +482,9 @@ function Form() {
               <img src={image} height={200} width={200} alt='Payment' />
             </div>
             <div className='reg-input-box'>
-              <input type="number" placeholder='Enter the transaction no' name="trans" value={trans} onChange={handleTransChange} required />
+              <input type="number" autoComplete='off' placeholder='Enter the transaction no' name="trans" value={trans} onChange={handleTransChange} required />
             </div>
-            <a href='./' onClick={handleSubmit} className='register-btn'>
+            <a href={link} onClick={handleSubmit} className='register-btn'>
               Submit
             </a>
           </form>

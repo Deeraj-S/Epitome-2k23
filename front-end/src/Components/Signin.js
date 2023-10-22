@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useFormik } from 'formik';
 import Navsign from './Navsign';
 import '../styles/Forms.css'
 import axios from 'axios';
+import { signInSchema } from '../schemas/signupSchema';
 
+const initialValues = {
+  email: "",
+  password: "",
+}
 
 function Signin() {
   const navigate = useNavigate()
   const link = '';
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   useEffect(() => {
     const token = localStorage.getItem('TOKEN')
@@ -18,25 +22,16 @@ function Signin() {
     }
   })
 
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
-  };
+  const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
+    initialValues: initialValues,
+    validationSchema: signInSchema,
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(event)
-    console.log("Email: ", email);
-    console.log("Password: ", password);
-
-    axios.post('http://localhost:5000/signin', {
-      email: email,
-      password: password
-    })
-      .then((res) => {
+    onSubmit: (values) => {
+      console.log(values)
+      axios.post('http://localhost:5000/signin', {
+        email: values.email,
+        password: values.password
+      }).then((res) => {
         if (res.data.code === 500) {
           alert('User Not Found')
         }
@@ -51,8 +46,8 @@ function Signin() {
       }).catch((err) => {
 
       })
-  };
-
+    }
+  });
 
   return (
     <>
@@ -61,14 +56,18 @@ function Signin() {
         <div className='login-box'>
           <p>Login</p>
 
+
           <form onSubmit={handleSubmit} >
             <div className='user-box'>
-              <input type="email" name="email" value={email} onChange={handleEmailChange} required />
-              <label>Email</label>
+              <input name="email" id='email' value={values.email} onChange={handleChange} required />
+              {errors.email && touched.email ? (<p className='form-error'>{errors.email}</p>) : null}
+
+              <label htmlFor='email'>Email</label>
             </div>
             <div className='user-box'>
-              <input type="password" name="email" value={password} onChange={handlePasswordChange} required />
-              <label>Password</label>
+              <input type="password" name="password" id='password' value={values.password} onChange={handleChange} required />
+              {errors.password && touched.password ? (<p className='form-error'>{errors.password}</p>) : null}
+              <label htmlFor='password'>Password</label>
             </div>
             <a href='/forgotpass' className="a1"> Forget Password ?</a>
             <a href={link} onClick={handleSubmit}>

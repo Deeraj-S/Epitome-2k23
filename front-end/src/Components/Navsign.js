@@ -8,7 +8,9 @@ class Navsign extends Component {
         return (
             <>
                 <nav>
-                    <img src={logo} alt="logo" className="logo" />
+                    <a href="/signin">
+                        <img src={logo} alt="logo" className="logo" />
+                    </a>
                 </nav >
             </>
         )
