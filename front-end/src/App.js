@@ -10,6 +10,7 @@ import Events from './Components/Event';
 import About from './Components/About';
 import Schedule from './Components/Schedule';
 import EventRules from './Components/EventRules';
+import Admin from './Components/Admin';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
           <Route path='/Schedule' element={<Schedule />}></Route>
           <Route path='/event-rules' element={<EventRules />}></Route>
           <Route path='/event-rules/:id' element={<EventRules />}></Route>
+          <Route path='/Admin' element={<Admin />}></Route>
         </Routes>
       </BrowserRouter>
     </>

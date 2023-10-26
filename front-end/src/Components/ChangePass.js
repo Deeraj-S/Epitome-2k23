@@ -1,18 +1,26 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
 import { changePassSchema } from "../schemas/signupSchema"
-import '../styles/Forms.css'
-import Navsign from "./Navsign"
 import axios from "axios"
+import Cookies from 'js-cookie';
+import Navsign from "./Navsign"
+import '../styles/Forms.css'
 
 const initialValues = {
     otp: "",
     password: "",
 }
+
 function ChangePass() {
     const navigate = useNavigate()
     const link = ''
+    useEffect(() => {
+        const token = Cookies.get('TOKEN');
+        if (token) {
+            navigate('/')
+        }
+    }, [navigate])
 
     const { values, touched, errors, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
@@ -20,10 +28,8 @@ function ChangePass() {
         onSubmit: (values) => {
             console.log(values)
             axios.post('http://localhost:5000/changepass', {
-
                 otp: values.otp,
                 password: values.password,
-
             }).then((res) => {
                 if (res.data.code === 200) {
                     alert("Password Updated Successfully")

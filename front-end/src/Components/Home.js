@@ -1,14 +1,17 @@
 import React from "react"
+import { useState, useEffect, useRef } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import Cookies from 'js-cookie';
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import image from '../img2.png'
 import '../styles/Home.css'
-import { useState, useEffect, useRef } from "react"
+
 
 function Home() {
     const navigate = useNavigate()
     const [isVisible, setIsVisible] = useState(true);
+    // eslint-disable-next-line
     const [height, setHeight] = useState(0);
     const [isDivVisible, setIsDivVisible] = useState(true);
     const timeWrap = useRef(null);
@@ -33,11 +36,11 @@ function Home() {
     }
 
     useEffect(() => {
-        const token = localStorage.getItem('TOKEN')
+        const token = Cookies.get('TOKEN');
         if (!token) {
             navigate('/signin')
         }
-    })
+    }, [navigate])
 
     useEffect(() => {
         window.addEventListener("scroll", listenToScroll);
@@ -56,6 +59,10 @@ function Home() {
             setIsVisible(true);
         }
     };
+
+
+
+
 
     return (
         <>

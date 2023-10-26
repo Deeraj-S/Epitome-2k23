@@ -1,18 +1,26 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import '../styles/Forms.css'
 import { useFormik } from "formik"
+import { useEffect } from "react"
 import { forgotPassSchema } from "../schemas/signupSchema"
-import Navsign from "./Navsign"
 import axios from "axios"
+import Cookies from 'js-cookie';
+import Navsign from "./Navsign"
+import '../styles/Forms.css'
 
 const initialValues = {
     email: ""
 }
-
 function ForgotPass() {
     const navigate = useNavigate()
     const link = ''
+    useEffect(() => {
+        const token = Cookies.get('TOKEN');
+        if (token) {
+            navigate('/')
+        }
+    }, [navigate])
+
     const { values, touched, errors, handleChange, handleSubmit } = useFormik({
         initialValues: initialValues,
         validationSchema: forgotPassSchema,
@@ -26,7 +34,7 @@ function ForgotPass() {
                     alert("A OTP as been sent to your email")
                     navigate('/newpass')
                 }
-                if (res.data.code === 500) {
+                if (res.data.code === 404) {
                     alert("Email does not exist")
                 }
             }).catch((err) => {

@@ -3,7 +3,6 @@ import '../styles/NavbarStyles.css'
 import logo from '../images/logo.png'
 
 class Navsign extends Component {
-
     render() {
         return (
             <>

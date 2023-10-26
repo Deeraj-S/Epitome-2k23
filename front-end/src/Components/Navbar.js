@@ -1,12 +1,33 @@
 import React, { Component } from "react"
-import '../styles/NavbarStyles.css'
 import logo from '../images/logo.png'
+import '../styles/NavbarStyles.css'
 
 class Navbar extends Component {
     state = { clicked: false };
     handleClick = () => {
         this.setState({ clicked: !this.state.clicked })
     }
+
+    componentDidMount() {
+        document.body.addEventListener('click', this.handleBodyClick);
+    }
+
+    componentWillUnmount() {
+        document.body.removeEventListener('click', this.handleBodyClick);
+    }
+
+    handleBodyClick = (event) => {
+        const navbar = document.getElementById('navbar');
+        const mobileIcon = document.getElementById('mobile');
+
+
+        if (navbar && !navbar.contains(event.target) && !mobileIcon.contains(event.target)) {
+            this.setState({ clicked: false });
+            if (this.props.onToggleVisibility) {
+                this.props.onToggleVisibility(false);
+            }
+        }
+    };
 
     render() {
         return (

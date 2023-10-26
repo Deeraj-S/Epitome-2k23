@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect } from 'react'
-import '../styles/EventForms.css'
+import Cookies from 'js-cookie';
 import Navbar from './Navbar'
-
+import '../styles/EventForms.css'
 
 function EventRules() {
     const navigate = useNavigate()
@@ -12,11 +12,11 @@ function EventRules() {
     let EventParadox = null
 
     useEffect(() => {
-        const token = localStorage.getItem('TOKEN')
+        const token = Cookies.get('TOKEN');
         if (!token) {
             navigate('/signin')
         }
-    })
+    }, [navigate])
 
     if (params.id === 'timeWrap') {
         EventData = {

@@ -1,20 +1,22 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import Cookies from 'js-cookie';
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import '../styles/RegForms.css'
 import image from '../payment.jpg'
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
 
 function Form() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    const token = localStorage.getItem('TOKEN')
+    const token = Cookies.get('TOKEN');
     if (!token) {
       navigate('/signin')
     }
-  })
+
+  }, [navigate])
   const link = ''
   const [college_name, setcollege_name] = useState("");
   const handlecollege_nameChange = (event) => {
@@ -337,7 +339,6 @@ function Form() {
       if (res.data.code === 200) {
         alert("Registration Successful")
         navigate('/')
-
       }
 
       if (res.data.code === 500) {

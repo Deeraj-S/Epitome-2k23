@@ -1,10 +1,11 @@
 import React, { useEffect } from 'react'
-import '../styles/Forms.css'
-import Navsign from './Navsign';
+import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { signUpSchema } from '../schemas/signupSchema';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
+import Navsign from './Navsign';
+import '../styles/Forms.css'
 
 
 const initialValues = {
@@ -19,11 +20,11 @@ function Forms() {
   const link = ''
 
   useEffect(() => {
-    const token = localStorage.getItem('TOKEN')
+    const token = Cookies.get('TOKEN');
     if (token) {
       navigate('/')
     }
-  })
+  }, [navigate])
 
   const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,

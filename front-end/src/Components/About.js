@@ -1,18 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useEffect } from 'react'
+import Cookies from 'js-cookie';
 import Navbar from "./Navbar"
 import '../styles/About.css'
-
 
 function About() {
     const navigate = useNavigate()
     useEffect(() => {
-        const token = localStorage.getItem('TOKEN')
+        const token = Cookies.get('TOKEN');
         if (!token) {
             navigate('/signin')
         }
-    })
+    }, [navigate])
+
     return (
         <>
             <Navbar />

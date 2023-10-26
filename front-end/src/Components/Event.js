@@ -3,8 +3,10 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { useRef } from "react";
+import Cookies from 'js-cookie';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+
 
 function Event() {
     const timeWrap = useRef(null);
@@ -27,14 +29,17 @@ function Event() {
             behavior: "smooth",
         });
     }
-
     const navigate = useNavigate()
     useEffect(() => {
-        const token = localStorage.getItem('TOKEN')
+        const token = Cookies.get('TOKEN');
         if (!token) {
             navigate('/signin')
         }
-    })
+
+    }, [navigate])
+
+
+
 
     return (
         <>

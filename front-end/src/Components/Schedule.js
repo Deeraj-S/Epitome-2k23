@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import Cookies from 'js-cookie';
 import Navbar from "./Navbar"
 import '../styles/ScheduleForms.css'
 
-
 function Schedule() {
     const navigate = useNavigate()
-
     useEffect(() => {
-        const token = localStorage.getItem('TOKEN')
+        const token = Cookies.get('TOKEN');
         if (!token) {
             navigate('/signin')
         }
-    })
+    }, [navigate])
 
     return (
         <>

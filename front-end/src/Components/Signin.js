@@ -1,26 +1,28 @@
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
+import { signInSchema } from '../schemas/signupSchema';
+import axios from 'axios';
+import Cookies from 'js-cookie';
 import Navsign from './Navsign';
 import '../styles/Forms.css'
-import axios from 'axios';
-import { signInSchema } from '../schemas/signupSchema';
 
 const initialValues = {
   email: "",
   password: "",
 }
-
 function Signin() {
   const navigate = useNavigate()
   const link = '';
 
   useEffect(() => {
-    const token = localStorage.getItem('TOKEN')
+    const token = Cookies.get('TOKEN');
     if (token) {
       navigate('/')
     }
-  })
+
+  }, [navigate])
+
 
   const { values, touched, errors, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: initialValues,
@@ -32,6 +34,12 @@ function Signin() {
         email: values.email,
         password: values.password
       }).then((res) => {
+
+        if (res.data.code === 230) {
+          navigate("/Admin")
+        }
+
+
         if (res.data.code === 500) {
           alert('User Not Found')
         }
@@ -41,9 +49,10 @@ function Signin() {
 
         if (res.data.code === 200) {
           navigate('/')
-          localStorage.setItem('TOKEN', res.data.token)
+          Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 60000) })
         }
       }).catch((err) => {
+        alert("Error")
 
       })
     }
@@ -51,6 +60,7 @@ function Signin() {
 
   return (
     <>
+
       <div className='login-body'>
         <Navsign />
         <div className='login-box'>
@@ -59,13 +69,13 @@ function Signin() {
 
           <form onSubmit={handleSubmit} >
             <div className='user-box'>
-              <input name="email" id='email' value={values.email} onChange={handleChange} required />
+              <input name="email" id='email' value={values.email} onChange={handleChange} onBlur={handleBlur} required />
               {errors.email && touched.email ? (<p className='form-error'>{errors.email}</p>) : null}
 
               <label htmlFor='email'>Email</label>
             </div>
             <div className='user-box'>
-              <input type="password" name="password" id='password' value={values.password} onChange={handleChange} required />
+              <input type="password" name="password" id='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
               {errors.password && touched.password ? (<p className='form-error'>{errors.password}</p>) : null}
               <label htmlFor='password'>Password</label>
             </div>
