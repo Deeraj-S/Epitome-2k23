@@ -44,7 +44,7 @@ class Navbar extends Component {
                             <li><a href="/Registration">Registration</a></li>
                             <li ><a href="/Events" >Events</a></li>
                             <li><a href="/Schedule">Schedule</a></li>
-                            <li><a href="/">Help desk</a></li>
+                            <li><a href="/Help-Desk">Help desk</a></li>
                         </ul>
                     </div>
                     <div id="mobile" onClick={this.handleClick}>

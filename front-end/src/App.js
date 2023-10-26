@@ -11,6 +11,7 @@ import About from './Components/About';
 import Schedule from './Components/Schedule';
 import EventRules from './Components/EventRules';
 import Admin from './Components/Admin';
+import Helpdesk from './Components/Helpdesk';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path='/Registration' element={<Registration />}></Route>
           <Route path='/Events' element={<Events />} ></Route>
           <Route path='/Schedule' element={<Schedule />}></Route>
+          <Route path='/Help-Desk' element={<Helpdesk />}></Route>
           <Route path='/event-rules' element={<EventRules />}></Route>
           <Route path='/event-rules/:id' element={<EventRules />}></Route>
           <Route path='/Admin' element={<Admin />}></Route>
