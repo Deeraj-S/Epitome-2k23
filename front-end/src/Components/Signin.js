@@ -49,7 +49,7 @@ function Signin() {
 
         if (res.data.code === 200) {
           navigate('/')
-          Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 60000) })
+          Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 36000000) })
         }
       }).catch((err) => {
         alert("Error")
