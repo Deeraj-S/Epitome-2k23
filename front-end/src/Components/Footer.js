@@ -6,10 +6,10 @@ function Footer() {
         <>
             <div className="footer-holder">
                 <div className="footer1">
-                    <p>Copyrights</p>
+                    <p>Copyrights EPITOME 2023</p>
                 </div>
                 <div className="footer2">
-                    <p>St Aloysius of Institution of management and Information Science</p>
+                    <p>St Aloysius College Institute of management and IT</p>
                 </div>
             </div>
         </>

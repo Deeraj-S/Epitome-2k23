@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
 import { changePassSchema } from "../schemas/signupSchema"
@@ -6,6 +6,7 @@ import axios from "axios"
 import Cookies from 'js-cookie';
 import Navsign from "./Navsign"
 import '../styles/Forms.css'
+import LoadingSpinner from "./LoadingSpinner"
 
 const initialValues = {
     otp: "",
@@ -14,6 +15,8 @@ const initialValues = {
 
 function ChangePass() {
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState(false)
     const link = ''
     useEffect(() => {
         const token = Cookies.get('TOKEN');
@@ -26,6 +29,7 @@ function ChangePass() {
         initialValues: initialValues,
         validationSchema: changePassSchema,
         onSubmit: (values) => {
+            setLoading(true)
             console.log(values)
             axios.post('http://localhost:5000/changepass', {
                 otp: values.otp,
@@ -36,41 +40,47 @@ function ChangePass() {
                     navigate('/signin')
                 }
                 if (res.data.code === 404) {
-                    alert('Invalid OTP')
+                    setMessage("Invalid OTP")
                 }
             }).catch((err) => {
 
+            }).finally(() => {
+                setLoading(false)
             })
         }
     });
 
     return (
-        <div className='login-body'>
-            <Navsign />
-            <div className='login-box'>
-                <p>Forget password</p>
+        <>
+            {loading && <LoadingSpinner />}
+            <div className='login-body'>
+                <Navsign />
+                <div className='login-box'>
+                    <p>Forget password</p>
+                    {message && <p className={message.includes('sent') ? 'success-message' : 'error-message'}>{message}</p>}
 
-                <form onSubmit={handleSubmit}>
-                    <div className='user-box'>
-                        <input type="text" name="otp" id='otp' value={values.otp} onChange={handleChange} required />
-                        {errors.otp && touched.otp ? (<p className="form-error">{errors.otp}</p>) : null}
-                        <label htmlFor="otp">OTP</label>
-                    </div>
-                    <div className='user-box'>
-                        <input type="password" name="password" id="password" value={values.password} onChange={handleChange} required />
-                        {errors.password && touched.password ? (<p className="form-error">{errors.password}</p>) : null}
-                        <label htmlFor="password">NEW PASSWORD</label>
-                    </div>
-                    <a href={link} onClick={handleSubmit}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Change Password
-                    </a>
-                </form>
+                    <form onSubmit={handleSubmit}>
+                        <div className='user-box'>
+                            <input type="text" name="otp" id='otp' value={values.otp} onChange={handleChange} required />
+                            {errors.otp && touched.otp ? (<p className="form-error">{errors.otp}</p>) : null}
+                            <label htmlFor="otp">OTP</label>
+                        </div>
+                        <div className='user-box'>
+                            <input type="password" name="password" id="password" value={values.password} onChange={handleChange} required />
+                            {errors.password && touched.password ? (<p className="form-error">{errors.password}</p>) : null}
+                            <label htmlFor="password">NEW PASSWORD</label>
+                        </div>
+                        <a href={link} onClick={handleSubmit}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Change Password
+                        </a>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

@@ -6,9 +6,13 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import '../styles/RegForms.css'
 import image from '../payment.jpg'
+import LoadingSpinner from './LoadingSpinner';
 
 function Form() {
   const navigate = useNavigate()
+  const link = ''
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState(false)
 
   useEffect(() => {
     const token = Cookies.get('TOKEN');
@@ -17,7 +21,7 @@ function Form() {
     }
 
   }, [navigate])
-  const link = ''
+
   const [college_name, setcollege_name] = useState("");
   const handlecollege_nameChange = (event) => {
     setcollege_name(event.target.value);
@@ -224,6 +228,7 @@ function Form() {
   };
 
   const handleSubmit = (event) => {
+    setLoading(true)
     event.preventDefault();
     console.log("college_name : ", college_name);
     console.log("quiz_user1 : ", quiz_user1);
@@ -342,16 +347,19 @@ function Form() {
       }
 
       if (res.data.code === 500) {
-        alert("All field must be entered")
+        setMessage("All fields must be filled")
       }
 
     }).catch((err) => {
 
+    }).finally(() => {
+      setLoading(false)
     })
 
   };
   return (
     <>
+      {loading && <LoadingSpinner />}
       <Navbar />
       <div className='reg-body'>
         <div className='reg-box'>
@@ -492,10 +500,13 @@ function Form() {
             <div className='reg-input-box'>
               <input type="number" autoComplete='off' placeholder='Enter the transaction no' name="trans" value={trans} onChange={handleTransChange} required />
             </div>
+            {message && <h3 className={message.includes('sent') ? 'Success-message' : 'errors-message'}>{message}</h3>}
             <a href={link} onClick={handleSubmit} className='register-btn'>
               Submit
             </a>
+
           </form>
+
         </div>
       </div>
       <Footer />

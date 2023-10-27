@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { useFormik } from "formik"
 import { useEffect } from "react"
@@ -7,12 +7,15 @@ import axios from "axios"
 import Cookies from 'js-cookie';
 import Navsign from "./Navsign"
 import '../styles/Forms.css'
+import LoadingSpinner from "./LoadingSpinner"
 
 const initialValues = {
     email: ""
 }
 function ForgotPass() {
     const navigate = useNavigate()
+    const [loading, setLoading] = useState(false)
+    const [message, setMessage] = useState(false)
     const link = ''
     useEffect(() => {
         const token = Cookies.get('TOKEN');
@@ -26,6 +29,7 @@ function ForgotPass() {
         validationSchema: forgotPassSchema,
 
         onSubmit: (values) => {
+            setLoading(true)
             console.log(values)
             axios.post('http://localhost:5000/forgotpass', {
                 email: values.email
@@ -35,36 +39,42 @@ function ForgotPass() {
                     navigate('/newpass')
                 }
                 if (res.data.code === 404) {
-                    alert("Email does not exist")
+                    setMessage("Email does not exist")
                 }
             }).catch((err) => {
 
+            }).finally(() => {
+                setLoading(false)
             })
         }
     });
 
     return (
-        <div className='login-body'>
-            <Navsign />
-            <div className='login-box'>
-                <p>Forgot password</p>
+        <>
+            {loading && <LoadingSpinner />}
+            <div className='login-body'>
+                <Navsign />
+                <div className='login-box'>
+                    <p>Forgot password</p>
+                    {message && <p className={message.includes('sent') ? 'success-message' : 'error-message'}>{message}</p>}
 
-                <form onSubmit={handleSubmit}>
-                    <div className='user-box'>
-                        <input type="text" name="email" id="email" value={values.email} onChange={handleChange} required />
-                        {errors.email && touched.email ? (<p className="form-error">{errors.email}</p>) : null}
-                        <label htmlFor="email">Email</label>
-                    </div>
-                    <a href={link} onClick={handleSubmit}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Send OTP
-                    </a>
-                </form>
+                    <form onSubmit={handleSubmit}>
+                        <div className='user-box'>
+                            <input type="text" name="email" id="email" value={values.email} onChange={handleChange} required />
+                            {errors.email && touched.email ? (<p className="form-error">{errors.email}</p>) : null}
+                            <label htmlFor="email">Email</label>
+                        </div>
+                        <a href={link} onClick={handleSubmit}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            Send OTP
+                        </a>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

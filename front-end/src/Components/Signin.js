@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { signInSchema } from '../schemas/signupSchema';
@@ -6,6 +6,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import Navsign from './Navsign';
 import '../styles/Forms.css'
+import LoadingSpinner from './LoadingSpinner';
 
 const initialValues = {
   email: "",
@@ -13,6 +14,8 @@ const initialValues = {
 }
 function Signin() {
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState('');
   const link = '';
 
   useEffect(() => {
@@ -29,6 +32,7 @@ function Signin() {
     validationSchema: signInSchema,
 
     onSubmit: (values) => {
+      setLoading(true)
       console.log(values)
       axios.post('http://localhost:5000/signin', {
         email: values.email,
@@ -39,32 +43,38 @@ function Signin() {
           navigate("/Admin")
         }
 
-
-        if (res.data.code === 500) {
-          alert('User Not Found')
-        }
-        if (res.data.code === 404) {
-          alert('Invalid Password')
-        }
-
-        if (res.data.code === 200) {
+        else if (res.data.code === 200) {
           navigate('/')
-          Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 36000000) })
+          Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 3600000) })
         }
+
+
+        else if (res.data.code === 500) {
+          setMessage("User Not Found")
+        }
+        else if (res.data.code === 404) {
+          setMessage("Invalid Password")
+        }
+
+
       }).catch((err) => {
         alert("Error")
 
+      }).finally(() => {
+        setLoading(false);
       })
     }
   });
 
   return (
     <>
+      {loading && <LoadingSpinner />}
 
       <div className='login-body'>
         <Navsign />
         <div className='login-box'>
           <p>Login</p>
+          {message && <p className={message.includes('sent') ? 'Success-message' : 'error-message'}>{message}</p>}
 
 
           <form onSubmit={handleSubmit} >

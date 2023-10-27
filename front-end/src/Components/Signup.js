@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { signUpSchema } from '../schemas/signupSchema';
@@ -6,6 +6,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import Navsign from './Navsign';
 import '../styles/Forms.css'
+import LoadingSpinner from './LoadingSpinner';
 
 
 const initialValues = {
@@ -17,6 +18,8 @@ const initialValues = {
 
 function Forms() {
   const navigate = useNavigate()
+  const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState(false)
   const link = ''
 
   useEffect(() => {
@@ -31,6 +34,7 @@ function Forms() {
     validationSchema: signUpSchema,
 
     onSubmit: (values, action) => {
+      setLoading(true)
       console.log(values)
 
       axios.post('http://localhost:5000/signup', {
@@ -46,21 +50,25 @@ function Forms() {
           navigate('/signin')
         }
         if (res.data.code === 404) {
-          alert('User already exist')
+          setMessage("User Already exist")
         }
       }).catch((err) => {
 
+      }).finally(() => {
+        setLoading(false)
       })
     }
   });
 
   return (
     <>
+      {loading && <LoadingSpinner />}
       <div className='login-body'>
         <Navsign />
 
         <div className='login-box'>
           <p>REGISTER</p>
+          {message && <p className={message.includes('sent') ? 'success-message' : 'error-message'}>{message}</p>}
 
           <form onSubmit={handleSubmit}>
 
