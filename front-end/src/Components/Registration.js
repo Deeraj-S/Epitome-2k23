@@ -26,8 +26,8 @@ function Form() {
   const handlecollege_nameChange = (event) => {
     setcollege_name(event.target.value);
   };
-  const [email_id,setemail_id]=useState("");
-  const handleemail_idChange = (event)=>{
+  const [email_id, setemail_id] = useState("");
+  const handleemail_idChange = (event) => {
     setemail_id(event.target.value);
   };
   const [quiz_user1, setquiz_user1] = useState("");
@@ -297,7 +297,7 @@ function Form() {
 
     axios.post('http://localhost:5000/register', {
       college_name: college_name,
-      email_id: email_id,   
+      email_id: email_id,
       quiz_user1: quiz_user1,
       quiz_user2: quiz_user2,
       quiz_phno1: quiz_phno1,
