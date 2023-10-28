@@ -75,7 +75,14 @@ function Home() {
                     isDivVisible
                     &&
                     <div className="bg-text">
-                        <p>EPITOME</p>
+                        <p><span>E</span>
+                            <span>P</span>
+                            <span>I</span>
+                            <span>T</span>
+                            <span>O</span>
+                            <span>M</span>
+                            <span>E</span>
+                        </p>
                     </div>
                 }
             </div>

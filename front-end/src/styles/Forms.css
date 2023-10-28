@@ -224,3 +224,10 @@ input:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 20px #000 inset;
   zoom: 0;
 }
+
+
+@media screen and (max-width:600px) {
+  .login-box {
+    width: 23rem;
+  }
+}
