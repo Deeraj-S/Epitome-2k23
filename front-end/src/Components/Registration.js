@@ -25,7 +25,11 @@ function Form() {
   const [college_name, setcollege_name] = useState("");
   const handlecollege_nameChange = (event) => {
     setcollege_name(event.target.value);
-  }
+  };
+  const [email_id,setemail_id]=useState("");
+  const handleemail_idChange = (event)=>{
+    setemail_id(event.target.value);
+  };
   const [quiz_user1, setquiz_user1] = useState("");
   const [quiz_phno1, setquiz_phno1] = useState("");
   const [quiz_user2, setquiz_user2] = useState("");
@@ -293,6 +297,7 @@ function Form() {
 
     axios.post('http://localhost:5000/register', {
       college_name: college_name,
+      email_id: email_id,   
       quiz_user1: quiz_user1,
       quiz_user2: quiz_user2,
       quiz_phno1: quiz_phno1,
@@ -368,6 +373,10 @@ function Form() {
             <h4>COLLEGE NAME</h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="College name" name="college_name" value={college_name} onChange={handlecollege_nameChange} required />
+            </div>
+            <h4>PARTICIPANT'S EMAIL ID</h4>
+            <div className='reg-input-box'>
+              <input type="text" autoComplete='off' placeholder="Email id" name="email_id" value={email_id} onChange={handleemail_idChange} required />
             </div>
             <h4>IT MANAGER</h4>
             <div className='reg-input-box'>

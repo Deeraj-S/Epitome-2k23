@@ -193,7 +193,7 @@ p span:nth-child(7) {
     border-radius: 5px;
     margin-bottom: 3rem;
     height: 23rem;
-
+    transition: 0.5s ease-in;
 }
 
 
@@ -204,86 +204,113 @@ p span:nth-child(7) {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
+    
 
+}
+.box1:hover{
+    height: 24rem;
+}
 
 .box2 {
     background-image: url(../images/Mindmines.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    
 }
-
+.box2:hover{
+    height: 24rem;
+}
 .box3 {
     background-image: url(../images/Futureflash.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box3:hover{
+    height: 24rem;
+}
 .box4 {
     background-image: url(../images/TurnTheTable.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box4:hover{
+    height: 24rem;
+}
 .box5 {
     background-image: url(../images/Chronobeats.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box5:hover{
+    height: 24rem;
+}
 .box6 {
     background-image: url(../images/Fashionshow.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box6:hover{
+    height: 24rem;
+}
 .box7 {
     background-image: url(../images/Treasurehunt.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box7:hover{
+    height: 24rem;
+}
 .box8 {
     background-image: url(../images/ItManager.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box8:hover{
+    height: 24rem;
+}
 .box9 {
     background-image: url(../images/Flashforward.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box9:hover{
+    height: 24rem;
+}
 .box10 {
     background-image: url(../images/Dumcharades.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box10:hover{
+    height: 24rem;
+}
 .box11 {
     background-image: url(../images/Gaming.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box11:hover{
+    height: 24rem;
+}
 .box12 {
     background-image: url(../images/logocreation.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
-
+.box12:hover{
+    height: 24rem;
+}
 @media screen and (max-width:1200px) {
     .event-box {
         margin: 3rem 0 2rem 0;
