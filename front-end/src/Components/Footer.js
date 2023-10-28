@@ -9,7 +9,7 @@ function Footer() {
                     <p>Copyrights EPITOME 2023</p>
                 </div>
                 <div className="footer2">
-                    <p>St Aloysius College Institute of management and IT</p>
+                    <a href="https://www.aimit.edu.in/" target="blank"><p>St Aloysius College Institute of management and IT</p></a>
                 </div>
             </div>
         </>

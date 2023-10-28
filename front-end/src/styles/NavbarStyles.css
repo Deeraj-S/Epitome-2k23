@@ -28,7 +28,7 @@ nav {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 700;
-    color: #FEF9F9;
+    color: #fcfcfc;
     transition: 0.3s ease-in-out;
 }
 
@@ -42,7 +42,7 @@ nav {
 }
 
 #mobile i {
-    color: #fff;
+    color: #DDDDDD;
     align-items: center;
     cursor: pointer;
     margin-left: -11.5rem;
@@ -85,6 +85,10 @@ nav {
         padding-bottom: 5px;
     }
 
+    #navbar li a {
+        font-size: 1.1rem;
+    }
+
     #mobile {
         display: block;
         margin-right: -2rem;
@@ -125,10 +129,11 @@ nav {
     }
 
     #navbar li {
-        margin-bottom: 25px;
-        border-bottom: 2px solid #fff;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #fff;
         width: 100%;
-        padding-bottom: 5px;
+        padding-bottom: 11px;
+
     }
 
     #mobile {
