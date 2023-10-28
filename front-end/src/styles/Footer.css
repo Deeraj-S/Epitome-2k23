@@ -15,3 +15,26 @@
     align-items: center;
     justify-content: center;
 }
+
+.footer2 a {
+    text-decoration: none;
+    color: #DDDDDD;
+}
+
+.footer2 a:hover {
+    color: rgb(178, 176, 176);
+}
+
+@media screen and (max-width:600px) {
+
+    .footer2 {
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .footer2 {
+        font-size: 0.8rem;
+    }
+
+}

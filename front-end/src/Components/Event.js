@@ -60,7 +60,7 @@ function Event() {
                     <button onClick={() => scrollToSection(games)} className="btn1">WARLOADS</button>
                     <button onClick={() => scrollToSection(paradox)} className="btn1">PARADOX</button>
                 </div>
-                <h1>EVENT POSTERS</h1>
+                <h1 className="heros">EVENT POSTERS</h1>
                 <div className="event-box">
                     <Link to={'/event-rules/timeWrap'}><div ref={timeWrap} className="box1"></div></Link>
                     <Link to={'/event-rules/mindMines'}><div ref={mindMines} className="box2"></div></Link>

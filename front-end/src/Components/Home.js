@@ -80,7 +80,7 @@ function Home() {
             </div>
             <div className="logo-image"><div className="logo-holder"><img src={image} alt="logo" className="img-logo" /></div></div>
             <div className="event-bg" ref={events}>
-                <h1>EVENTS</h1>
+                <h1 className="hero">EVENTS</h1>
                 <div className="event-buttons">
                     <button onClick={() => scrollToSection(timeWrap)} className="btn1">TIME WRAP</button>
                     <button onClick={() => scrollToSection(mindMines)} className="btn1">MIND MINES</button>
@@ -95,7 +95,7 @@ function Home() {
                     <button onClick={() => scrollToSection(games)} className="btn1">WARLOADS</button>
                     <button onClick={() => scrollToSection(paradox)} className="btn1">PARADOX</button>
                 </div>
-                <h1>EVENT POSTERS</h1>
+                <h1 className="heros">EVENT POSTERS</h1>
                 <div className="event-box">
                     <Link to={'/event-rules/timeWrap'}><div ref={timeWrap} className="box1"></div></Link>
                     <Link to={'/event-rules/mindMines'}><div ref={mindMines} className="box2"></div></Link>
