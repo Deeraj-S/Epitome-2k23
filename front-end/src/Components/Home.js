@@ -6,6 +6,7 @@ import Navbar from "./Navbar"
 import Footer from "./Footer"
 import image from '../img2.png'
 import '../styles/Home.css'
+import Media from "./Media";
 
 
 function Home() {
@@ -111,6 +112,7 @@ function Home() {
                     <Link to={'/event-rules/paradox'}><div ref={paradox} className="box12"></div></Link>
                 </div>
             </div>
+            <Media />
             <Footer />
         </>
     )

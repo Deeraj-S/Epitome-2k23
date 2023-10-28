@@ -1,0 +1,49 @@
+/*color: "#de1b25"*/
+
+.centerdiv {
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-holder {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid gray;
+    margin-right: 1rem;
+    background-color: #fcfcfc;
+}
+
+.media-holder a {
+    border-radius: 50%;
+
+    background-color: #fcfcfc;
+}
+
+.fa-youtube {
+    color: #CD201F;
+
+}
+
+.fa-instagram {
+    color: rgb(235, 48, 142);
+}
+
+.fa-envelope {
+    color: grey;
+}
+
+
+.fa-brands {
+    font-size: 1.4rem;
+
+}
+
+.fa-solid {
+    font-size: 1.4rem;
+}
