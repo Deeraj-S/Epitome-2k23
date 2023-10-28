@@ -374,6 +374,7 @@ function Form() {
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="College name" name="college_name" value={college_name} onChange={handlecollege_nameChange} required />
             </div>
+            <h4>PARTICIPANT'S EMAIL ID</h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Email id" name="email_id" value={email_id} onChange={handleemail_idChange} required />
             </div>
