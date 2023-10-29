@@ -16,13 +16,15 @@
     justify-content: center;
 }
 
+/*#d7cf2e*/
 .footer2 a {
     text-decoration: none;
-    color: #DDDDDD;
+    font-weight: 600;
+    color: #FDF096;
 }
 
 .footer2 a:hover {
-    color: rgb(178, 176, 176);
+    color: #FDF096;
 }
 
 @media screen and (max-width:600px) {

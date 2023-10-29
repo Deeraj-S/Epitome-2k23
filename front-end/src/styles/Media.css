@@ -15,7 +15,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-style: dashed;
     margin-right: 1rem;
     background-color: #fcfcfc;
 }
