@@ -29,32 +29,37 @@
     #logo {
       max-width: 40%;
       margin: 3% 0 3% 3%;
-      text-align: center;
       font-size: medium;
     }
-    
+
     #wrapper {
       background-color: #ffffff;
     }
 
     #social {
-      float: right;
       margin: 3% 2% 4% 3%;
       list-style-type: none;
     }
 
-    #social>li {
-      display: inline;
-    }
 
-    #social>li>a>img {
+    #social>a>img {
       max-width: 35px;
     }
-    #banner{
+
+    #holder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #banner {
       display: flex;
       align-items: center;
       justify-content: center;
     }
+
+
+
     h1,
     p {
       margin: 3%;
@@ -81,22 +86,24 @@
 </head>
 
 <body>
+
   <div id="wrapper">
     <header>
-      <div id="logo">
-        <h3>EPITOME 2023</h3>
+      <div id="holder">
+        <div id="logo">
+          <h3>EPITOME 2023</h3>
+        </div>
+        <div id="social">
+          <a href="#" target="_blank"><img src="https://mdbgo.io/dawidadach/responsiveemail/img/in-color.png"
+              alt="" /></a>
+        </div>
       </div>
-      <div>
-        <ul id="social">
-          <li>
-            <a href="#" target="_blank"><img src="https://mdbgo.io/dawidadach/responsiveemail/img/in-color.png"
-                alt="" /></a>
-          </li>
-        </ul>
-      </div>
+
     </header>
     <div id="banner">
-      <img src="https://img.freepik.com/premium-photo/man-browsing-internet_940802-622.jpg" alt="" />
+      <div>
+        <img src="https://img.freepik.com/premium-photo/man-browsing-internet_940802-622.jpg" alt="" />
+      </div>
     </div>
     <div class="one-col">
       <h1>Registration Confirmation Email!!</h1>
