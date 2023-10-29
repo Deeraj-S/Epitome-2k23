@@ -27,30 +27,31 @@
     }
 
     #logo {
-        max-width: 20%;
+      max-width: 20%;
         margin: 3% 0 3% 3%;
         float: left;
         font: 1em sans-serif;
-      }
+    }
 
-    
     #wrapper {
       background-color: #ffffff;
     }
 
     #social {
-      
-      margin: 2% 50% 4% 3%;
+      float: right;
+      margin: 3% 2% 4% 3%;
       list-style-type: none;
     }
 
-    
-
-    #social>li>a>img {
+    #social > a > img {
       max-width: 35px;
-      float: ;
     }
-   
+
+    #holder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
     h1,
     p {
       margin: 3%;
@@ -77,22 +78,27 @@
 </head>
 
 <body>
+
   <div id="wrapper">
     <header>
-      <div id="logo">
-        <h3>EPITOME </h3>
-      </div>
-      <div>
-        <ul id="social">
-          <li>
-            <a href="#" target="_blank"><img src="https://mdbgo.io/dawidadach/responsiveemail/img/in-color.png"
-                alt="" /></a>
-          </li>
-        </ul>
-      </div>
+        <div id="logo">
+          <h3>EPITOME </h3>
+        </div>
+        <div>
+          <ul id="social">
+              <a href="#" target="_blank"
+                ><img
+                  src="https://mdbgo.io/dawidadach/responsiveemail/img/in-color.png"
+                  alt=""
+              /></a>
+          </ul>
+        </div>
+
     </header>
-    <div id="banner" style="display: flex;">
-      <img src="https://img.freepik.com/premium-photo/man-browsing-internet_940802-622.jpg" alt="" />
+    <div id="banner" style="display: flex;padding-top:14%">
+      <div>
+        <img src="https://img.freepik.com/premium-photo/man-browsing-internet_940802-622.jpg" alt="" />
+      </div>
     </div>
     <div class="one-col">
       <h1>Registration Confirmation Email!!</h1>
