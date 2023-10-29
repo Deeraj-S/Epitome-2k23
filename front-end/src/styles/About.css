@@ -40,7 +40,15 @@
     font-family: sans-serif;
     letter-spacing: 1px;
 }
-
+.general-box h3 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #a14412;
+    text-align: left;
+    font-size: 1rem;
+    font-family:'Courier New', Courier, monospace;
+    letter-spacing: 1px;
+}
 
 @media screen and (max-width:1200px) {
     .general-box {
