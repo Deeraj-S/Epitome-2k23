@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Cookies from 'js-cookie';
 import Navbar from "./Navbar"
 import '../styles/About.css'
+import bgvideo from '../animation/9.webm'
 
 
 function Helpdesk() {
@@ -18,6 +19,22 @@ function Helpdesk() {
         <>
             <Navbar />
             <div className='general-body'>
+            <video
+                autoPlay
+                loop
+                muted
+                style={{
+                    position: "absolute",
+                    width: "100%",
+                    height: "100vh",
+                    left: "50%",
+                    top: "50%",
+                    objectFit: "cover",
+                    transform: "translate(-50%,-50%)",
+                    zIndex: "-1"
+                }}>
+            <source src={bgvideo} type='video/webm'/>
+        </video>
                 <div className='general-box'>
                     <p>For any queries contact</p>
                     <h3>STAFF COORDINATORS</h3>
