@@ -1,49 +1,62 @@
 /*color: "#de1b25"*/
 
 .centerdiv {
-    padding: 3rem;
+    padding: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: black;
 }
 
 .media-holder {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid gray;
+    border-style: dashed;
     margin-right: 1rem;
     background-color: #fcfcfc;
 }
 
 .media-holder a {
     border-radius: 50%;
+}
 
-    background-color: #fcfcfc;
+.media-holder:hover {
+    background-color: black;
+    width: 30px;
+    height: 30px;
 }
 
 .fa-youtube {
     color: #CD201F;
-
+    font-size: 1.4rem;
+    padding: 0.5rem;
 }
 
 .fa-instagram {
     color: rgb(235, 48, 142);
+    font-size: 1.4rem;
+    padding: 0.5rem;
 }
 
 .fa-envelope {
     color: grey;
+    font-size: 1.4rem;
+    padding: 0.5rem;
 }
 
 
-.fa-brands {
-    font-size: 1.4rem;
-
+.fa-youtube:hover {
+    background-color: black;
 }
 
-.fa-solid {
-    font-size: 1.4rem;
+.fa-instagram :hover {
+    background-color: black;
+}
+
+.fa-envelope :hover {
+    background-color: black;
 }
