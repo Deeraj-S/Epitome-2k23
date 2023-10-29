@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie';
 import Navbar from "./Navbar"
+import Footer from "./Footer"
 import '../styles/About.css'
 import bgvideo from '../animation/4.webm'
 
@@ -42,7 +43,9 @@ function About() {
                         <br />* Participation points are considered.<br />* Judge’s decision will be final. <br /> *Participants involved in Time Wrap, Mind Mines, IT Pharaoh, and Flash Forward are not allowed from participating in any other event.
                     </h4>
                 </div>
+
             </div>
+            <Footer />
         </>
     )
 }
