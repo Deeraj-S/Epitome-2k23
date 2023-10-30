@@ -22,3 +22,8 @@ export const changePassSchema = Yup.object({
     otp: Yup.string().required("OTP is required"),
     password: Yup.string().min(6).required("Please enter your password"),
 });
+
+
+export const registrationSchema = Yup.object({
+    email: Yup.string().email().required("Email is required")
+});
