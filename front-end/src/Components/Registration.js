@@ -7,6 +7,7 @@ import Footer from "./Footer"
 import '../styles/RegForms.css'
 import image from '../payment.jpg'
 import LoadingSpinner from './LoadingSpinner';
+import BackToTopButton from './BackToTopButton';
 
 function Form() {
   const navigate = useNavigate()
@@ -518,6 +519,7 @@ function Form() {
 
         </div>
       </div>
+      <BackToTopButton />
       <Footer />
     </>
   )

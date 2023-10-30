@@ -7,6 +7,7 @@ import Footer from "./Footer"
 import image from '../img2.png'
 import '../styles/Home.css'
 import Media from "./Media";
+import BackToTopButton from "./BackToTopButton";
 
 
 function Home() {
@@ -120,6 +121,7 @@ function Home() {
                 </div>
             </div>
             <Media />
+            <BackToTopButton />
             <Footer />
         </>
     )
