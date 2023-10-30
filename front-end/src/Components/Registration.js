@@ -7,10 +7,11 @@ import Footer from "./Footer"
 import '../styles/RegForms.css'
 import image from '../payment.jpg'
 import LoadingSpinner from './LoadingSpinner';
+import BackToTopButton from './BackToTopButton';
 import { useFormik } from 'formik';
 import { registrationSchema } from '../schemas/signupSchema';
 
-const initialValues={
+const initialValues = {
   college_name: "",
   email_id: "",
   quiz_user1: "",
@@ -39,8 +40,6 @@ const initialValues={
   pot_phno1: "",
   movie_user1: "",
   movie_user2: "",
-
-
   movie_user3: "",
   movie_user4: "",
   movie_user5: "",
@@ -62,6 +61,7 @@ const initialValues={
   trans: ""
 }
 
+
 function Form() {
   const navigate = useNavigate()
   const link = ''
@@ -76,11 +76,11 @@ function Form() {
 
   }, [navigate])
 
-  const {values,touched,errors,handleChange,handleBlur,handleSubmit}=useFormik({
-    initialValues:initialValues,
-    validationSchema:registrationSchema,
+  const { values, touched, errors, handleChange, handleBlur, handleSubmit } = useFormik({
+    initialValues: initialValues,
+    validationSchema: registrationSchema,
 
-    onSubmit:(values)=>{
+    onSubmit: (values) => {
       setLoading(true)
       console.log(values)
 
@@ -138,24 +138,24 @@ function Form() {
           alert("Registration Successful")
           navigate('/')
         }
-  
+
         if (res.data.code === 500) {
           setMessage("All fields must be filled")
         }
-  
+
       }).catch((err) => {
-        
+
       }).finally(() => {
         setLoading(false)
       })
-  
-    
+
+
     }
 
   });
-  
 
-    
+
+
   return (
     <>
       {loading && <LoadingSpinner />}
@@ -172,7 +172,7 @@ function Form() {
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Email id" name="email_id" value={values.email_id} onChange={handleChange} onBlur={handleBlur} required />
             </div>
-            {errors.email && touched.email ? (<p className='form-error'>{errors.email}</p>) : null}
+            {errors.email_id && touched.email_id ? (<h6 className='forms-errors'>{errors.email_id}</h6>) : null}
             <h4>IT MANAGER</h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="manager_user1" value={values.manager_user1} onChange={handleChange} onBlur={handleBlur} required />
@@ -202,7 +202,7 @@ function Form() {
               <input type="text" autoComplete='off' placeholder="Participant 1" name="treasure_user1" value={values.treasure_user1} onChange={handleChange} onBlur={handleBlur} required />
               <input type="number" autoComplete='off' placeholder="Phone no" name="treasure_phno1" value={values.treasure_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
-           
+
             <h4>PHOTOGRAPHY </h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="photography_user1" value={values.photography_user1} onChange={handleChange} onBlur={handleBlur} required />
@@ -309,6 +309,7 @@ function Form() {
 
         </div>
       </div>
+      <BackToTopButton />
       <Footer />
     </>
   )
