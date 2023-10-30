@@ -88,6 +88,12 @@
   color: red;
 }
 
+.form-error {
+  margin-top: -1.9rem;
+  font-size: 0.9rem;
+  color: red;
+}
+
 @media screen and (max-width:600px) {
 
   .reg-box {

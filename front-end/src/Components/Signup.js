@@ -35,7 +35,7 @@ function Forms() {
 
     onSubmit: (values, action) => {
       setLoading(true)
-      console.log(values)
+      
 
       axios.post('http://localhost:5000/signup', {
         username: values.username,

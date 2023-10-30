@@ -33,7 +33,7 @@ function Signin() {
 
     onSubmit: (values) => {
       setLoading(true)
-      console.log(values)
+      
       axios.post('http://localhost:5000/signin', {
         email: values.email,
         password: values.password

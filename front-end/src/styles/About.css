@@ -43,11 +43,12 @@
 .general-box h3 {
     margin: 0 0 30px;
     padding: 0;
-    color: #a14412;
+    color: #0a63c2;
     text-align: left;
     font-size: 1rem;
     font-family:'Courier New', Courier, monospace;
     letter-spacing: 1px;
+    font-weight: bold;
 }
 
 @media screen and (max-width:1200px) {
