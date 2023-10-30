@@ -50,11 +50,11 @@ function EventRules() {
         EventData = {
             EventName1: 'FUTURE FLASH',
             EventName2: '(Movie making)',
-            EventDetails1: '* No of Participants: 4(min)-6(max) members.',
+            EventDetails1: '* No of Participants: 4(min)-6(max) ',
             EventDetails2: '* Shortfilm must be 3-7 minutes long.',
             EventDetails3: '* Film can be created using Phone or Digital Camera.',
             EventDetails4: '* Gopro is not allowed.',
-            EventDetails5: '* External video (from youtube,etc) cannot be added in shotfilm.',
+            EventDetails5: '* External video (from youtube,etc) cannot be added in shortfilm.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Abdulla Nishad PM - 9633164690',
             Eventinfo2: 'Om Prakash Jangid - 9571305470'
@@ -65,7 +65,7 @@ function EventRules() {
         EventData = {
             EventName1: 'TURN THE TABLE',
             EventName2: '(IT Debate)',
-            EventDetails1: '* No. of Participants: 1 member.',
+            EventDetails1: '* No. of Participants: 1 ',
             EventDetails2: '* Usage of offensive words are strictly prohibited.',
             EventDetails3: '* They should be ready to take up any role.',
             EventDetails4: '* There will be 3 rounds',
@@ -79,7 +79,7 @@ function EventRules() {
         EventData = {
             EventName1: 'CHRONOBEATS',
             EventName2: '(THEMATIC DANCE)',
-            EventDetails1: '* No.of Participants: 5(min)-6(max)',
+            EventDetails1: '* No.of Participants: 5(min)-6(max) ',
             EventDetails2: '* The choice of the theme is entirely up to the teams.',
             EventDetails3: '* The time limit for each performance is 4 minutes, with an additional 1 minute allocated for setup before the performance begins.',
             EventDetails4: '* Participants must be aware that any obscene or offensive acts are completely unacceptable and will lead to immediate disqualification.',
@@ -111,7 +111,7 @@ function EventRules() {
         EventData = {
             EventName1: 'CONUNDRUM',
             EventName2: '(Treasure hunt)',
-            EventDetails1: '* No.of Participents: 2(min)-3(max)',
+            EventDetails1: '* No.of Participents: 1',
             EventDetails2: '* Be prepared with puzzle solving knowledge, riddles, knowledge about technologies.',
             EventDetails3: '* Location will be whole campus.',
             EventDetails4: '* There will be 4 rounds',
@@ -125,7 +125,7 @@ function EventRules() {
         EventData = {
             EventName1: ' IT PHARAOH ',
             EventName2: '(IT Manager)',
-            EventDetails1: '* No.of Participants: 1.\n\n\n\n',
+            EventDetails1: '* No.of Participants: 1.',
             EventDetails2: '* Dress code is "Formal attire".',
             EventDetails3: '* Participants should bring their own laptops.',
             EventDetails4: '* Rounds will consist of apptitude, mock press, case study, stress interview.',
@@ -140,7 +140,7 @@ function EventRules() {
         EventData = {
             EventName1: 'FLASH FORWARD',
             EventName2: '(Photography)',
-            EventDetails1: '* No.of Participant: 1.\n\n\n\n',
+            EventDetails1: '* No.of Participant: 1',
             EventDetails2: '* Participants should get their equipments like laptop, camera, mobile, tripod etc.',
             EventDetails3: '* They should be familar with editing.',
             EventDetails4: '* There will be 4 rounds',
@@ -154,7 +154,7 @@ function EventRules() {
         EventData = {
             EventName1: 'DELOREAN MUTES',
             EventName2: '(Dumb Charades)',
-            EventDetails1: '* No.of Participant: 3. \n \n \n',
+            EventDetails1: '* No.of Participant: 2',
             EventDetails2: '* Participants are required to possess a well-rounded knowledge of both cinema, including movies and actors, as well as a solid understanding of general computer knowledge and current trends and technologies in the IT field.',
             EventDetails3: '* Teams must maintain respect and avoid any offensive gestures or actions.',
             EventDetails4: '* There will be 3 rounds.',
@@ -168,7 +168,7 @@ function EventRules() {
         EventData = {
             EventName1: 'WARLORDS',
             EventName2: '(Gaming)',
-            EventDetails1: '* No.of Participants: 2.\n\n',
+            EventDetails1: '* No.of Participants: 2.',
             EventDetails2: '* No hacks, points depend on kills and positions.',
             EventDetails3: '* Participants should bring headphones.',
             EventHeads: 'EVENT HEADS',

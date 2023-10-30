@@ -10,8 +10,13 @@
 }
 
 .schedule-box h2 {
-    color: white;
-    text-align: center;
+        color: #DDDDDD;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        font-weight: 800;
+        font-size: 1.9rem;
 }
 
 @media screen and (max-width:600px) {

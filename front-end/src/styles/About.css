@@ -22,15 +22,23 @@
 }
 
 .general-box p {
+    color: #DDDDDD;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-weight: 800;
+    font-size: 1.9rem;
+}
+.general-box h2{
     margin: 0 0 30px;
     padding: 0;
     color: #DDDDDD;
     text-align: center;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-family: sans-serif;
     letter-spacing: 1px;
 }
-
 .general-box h4 {
     margin: 0 0 30px;
     padding: 0;
@@ -43,10 +51,10 @@
 .general-box h3 {
     margin: 0 0 30px;
     padding: 0;
-    color: #0a63c2;
+    color: #b94836;
     text-align: left;
     font-size: 1rem;
-    font-family:'Courier New', Courier, monospace;
+    font-family:'Times New Roman', Times, serif;
     letter-spacing: 1px;
     font-weight: bold;
 }

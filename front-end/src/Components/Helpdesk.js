@@ -37,20 +37,20 @@ function Helpdesk() {
                     <source src={bgvideo} type='video/webm' />
                 </video>
                 <div className='general-box'>
-                    <p>For any queries contact</p>
+                    <h2>For any queries contact</h2>
                     <h3>STAFF COORDINATORS</h3>
                     <h4>
-                        Mr.Roshan Surasis +91 966348843443<br />
-                        Dr.Jeevan Pinto +91 9448952025<br />
+                        Mr Roshan Suvaris +91 966348843443<br />
+                        Dr Jeevan Pinto +91 9448952025<br />
                     </h4>
                     <h3>STUDENT COORDINATORS</h3>
                     <h4>
-                        Ms.Anvitha +91 7892772583<br />
-                        Ms.Manasi +91 8277050760<br />
+                        Ms Anvitha +91 7892772583<br />
+                        Ms Manasi +91 8277050760<br />
                     </h4>
                     <h3>WEBSITE TEAM</h3>
                     <h4>
-                        Mr.Deeraj +91 8088237969
+                        Mr Deeraj +91 8088237969
                     </h4>
                 </div>
             </div>
