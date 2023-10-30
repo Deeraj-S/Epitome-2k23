@@ -88,10 +88,11 @@
   color: red;
 }
 
-.form-error {
+.forms-errors {
   margin-top: -1.9rem;
   font-size: 0.9rem;
   color: red;
+  padding-left: 0.9rem;
 }
 
 @media screen and (max-width:600px) {

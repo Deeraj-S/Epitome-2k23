@@ -25,5 +25,5 @@ export const changePassSchema = Yup.object({
 
 
 export const registrationSchema = Yup.object({
-    email: Yup.string().email().required("Email is required")
+    email_id: Yup.string().email("Enter a valid Email").required("Email is required")
 });
