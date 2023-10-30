@@ -38,7 +38,7 @@ function About() {
                 <div className='general-box'>
                     <p>GENERAL RULES</p>
                     <h4>
-                        * The team must consist maximum of 15 member.<br /> * The registration fee will be 1500/- per team.<br /> * Only one team from one department.<br /> * College ID and permission letter from
+                        * The team must consist maximum of 15 member.<br /> * The registration fee will be 1500/- per team.<br /> * Only one team from one College.<br /> * College ID and permission letter from
                         Principal/HOD for each team is mandatory.<br />*  Accommodation will be arranged only on prior information for outstation colleges.<br /> * All events are considered for overall.
                         <br />* Participation points are considered.<br />* Judge’s decision will be final. <br /> *Participants involved in Time Wrap, Mind Mines, IT Pharaoh, and Flash Forward are not allowed from participating in any other event.
                     </h4>

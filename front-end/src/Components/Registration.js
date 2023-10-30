@@ -67,15 +67,11 @@ function Form() {
 
   const [treasure_user1, settreasure_user1] = useState("");
   const [treasure_phno1, settreasure_phno1] = useState("");
-  const [treasure_user2, settreasure_user2] = useState("");
   const handleTreasure_user1Change = (event) => {
     settreasure_user1(event.target.value);
   };
   const handleTreasure_phno1Change = (event) => {
     settreasure_phno1(event.target.value);
-  };
-  const handleTreasure_user2Change = (event) => {
-    settreasure_user2(event.target.value);
   };
 
   const [photography_user1, setphotography_user1] = useState("");
@@ -157,7 +153,6 @@ function Form() {
   const [pot_user1, setpot_user1] = useState("");
   const [pot_phno1, setpot_phno1] = useState("");
   const [pot_user2, setpot_user2] = useState("");
-  const [pot_user3, setpot_user3] = useState("");
   const handlePot_user1Change = (event) => {
     setpot_user1(event.target.value);
   };
@@ -166,9 +161,6 @@ function Form() {
   };
   const handlePot_user2Change = (event) => {
     setpot_user2(event.target.value);
-  };
-  const handlePot_user3Change = (event) => {
-    setpot_user3(event.target.value);
   };
 
   const [fashion_user1, setfashion_user1] = useState("");
@@ -248,7 +240,6 @@ function Form() {
 
     console.log("treasure_user1 : ", treasure_user1);
     console.log("treasure_phno1 : ", treasure_phno1);
-    console.log("treasure_user2 : ", treasure_user2);
 
     console.log("photography_user1 : ", photography_user1);
     console.log("photography_phno1 : ", photography_phno1);
@@ -267,7 +258,6 @@ function Form() {
     console.log("pot_user1 : ", pot_user1);
     console.log("pot_phno1 : ", pot_phno1);
     console.log("pot_user2 : ", pot_user2);
-    console.log("pot_user3 : ", pot_user3);
 
     console.log("movie_user1 : ", movie_user1);
     console.log("movie_phno1 : ", movie_phno1);
@@ -307,7 +297,6 @@ function Form() {
       code_user2: code_user2,
       code_phno1: code_phno1,
       treasure_user1: treasure_user1,
-      treasure_user2: treasure_user2,
       treasure_phno1: treasure_phno1,
       photography_user1: photography_user1,
       photography_phno1: photography_phno1,
@@ -322,7 +311,6 @@ function Form() {
       thematic_phno1: thematic_phno1,
       pot_user1: pot_user1,
       pot_user2: pot_user2,
-      pot_user3: pot_user3,
       pot_phno1: pot_phno1,
       movie_user1: movie_user1,
       movie_user2: movie_user2,
@@ -405,12 +393,9 @@ function Form() {
             <h4>TREASURE HUNT </h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="treasure_user1" value={treasure_user1} onChange={handleTreasure_user1Change} required />
-              <input type="text" autoComplete='off' placeholder="Participant 2" name="treasure_user2" value={treasure_user2} onChange={handleTreasure_user2Change} required />
-            </div>
-            <div className='reg-input-box'>
               <input type="number" autoComplete='off' placeholder="Phone no" name="treasure_phno1" value={treasure_phno1} onChange={handleTreasure_phno1Change} required />
             </div>
-
+           
             <h4>PHOTOGRAPHY </h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="photography_user1" value={photography_user1} onChange={handlePhotography_user1Change} required />
@@ -463,7 +448,6 @@ function Form() {
               <input type="text" autoComplete='off' placeholder="Participant 2" name="pot_use2" value={pot_user2} onChange={handlePot_user2Change} required />
             </div>
             <div className='reg-input-box'>
-              <input type="text" autoComplete='off' placeholder="Participant 3" name="pot_user3" value={pot_user3} onChange={handlePot_user3Change} required />
               <input type="number" autoComplete='off' placeholder="Phone no" name="pot_phno1" value={pot_phno1} onChange={handlePot_phno1Change} required />
             </div>
 
