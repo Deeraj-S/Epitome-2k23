@@ -6,6 +6,7 @@ import { useRef } from "react";
 import Cookies from 'js-cookie';
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import BackToTopButton from "./BackToTopButton";
 
 
 function Event() {
@@ -76,6 +77,7 @@ function Event() {
                     <Link to={'/event-rules/paradox'}><div ref={paradox} className="box12"></div></Link>
                 </div>
             </div>
+            <BackToTopButton />
             <Footer />
         </>
     )
