@@ -294,9 +294,21 @@ function Form() {
             </div>
 
             <h4>PAYMENT</h4>
-            <div className='reg-input-box'>
-              <img src={image} height={200} width={200} alt='Payment' />
+            <div className='reg-input-box' >
+              <h3>ACCOUNT NAME : <br/> AIMIT MCA operating account <br/> </h3>
             </div>
+             <div className='reg-input-box'>
+                <h3>ACCOUNT NUMBER : <br/>412902010012342 <br/></h3>
+             </div>
+             <div className='reg-input-box'>
+              <h3>BANK : <br/>Union Banl of India <br/></h3>
+             </div>
+             <div className='reg-input-box'>
+              <h3>IFSC : <br/> UBIN0541290<br/></h3>
+             </div>
+             <div className='reg-input-box'>
+              <h3>BRANCH : <br/> Hampankatta</h3>
+             </div>
             <div className='reg-input-box'>
               <input type="number" autoComplete='off' placeholder='Enter the transaction no' name="trans" value={values.trans} onChange={handleChange} onBlur={handleBlur} required />
             </div>
