@@ -31,7 +31,7 @@ function ForgotPass() {
         onSubmit: (values) => {
             setLoading(true)
             console.log(values)
-            axios.post('http://localhost:5000/forgotpass', {
+            axios.post('https://serverepitome.onrender.com/forgotpass', {
                 email: values.email
             }).then((res) => {
                 if (res.data.code === 200) {

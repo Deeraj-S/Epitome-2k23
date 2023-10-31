@@ -83,7 +83,7 @@ function Form() {
       setLoading(true)
       console.log(values)
 
-      axios.post('http://localhost:5000/register', {
+      axios.post('https://serverepitome.onrender.com/register', {
         college_name: values.college_name,
         email_id: values.email_id,
         quiz_user1: values.quiz_user1,

@@ -31,7 +31,7 @@ function ChangePass() {
         onSubmit: (values) => {
             setLoading(true)
             console.log(values)
-            axios.post('http://localhost:5000/changepass', {
+            axios.post('https://serverepitome.onrender.com/changepass', {
                 otp: values.otp,
                 password: values.password,
             }).then((res) => {

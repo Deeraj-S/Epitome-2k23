@@ -35,9 +35,9 @@ function Forms() {
 
     onSubmit: (values, action) => {
       setLoading(true)
-      
 
-      axios.post('http://localhost:5000/signup', {
+
+      axios.post('https://serverepitome.onrender.com/signup', {
         username: values.username,
         email: values.email,
         password: values.password,
