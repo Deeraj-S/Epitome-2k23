@@ -33,7 +33,7 @@ function Signin() {
 
     onSubmit: (values) => {
       setLoading(true)
-      
+
       axios.post('http://localhost:5000/signin', {
         email: values.email,
         password: values.password
@@ -45,7 +45,7 @@ function Signin() {
 
         else if (res.data.code === 200) {
           navigate('/')
-          Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 3600000) })
+          Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 7200000) })
         }
 
 
