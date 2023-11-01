@@ -19,22 +19,6 @@ function About() {
         <>
             <Navbar />
             <div className='general-body'>
-                <video
-                    autoPlay
-                    loop
-                    muted
-                    style={{
-                        position: "absolute",
-                        width: "100%",
-                        height: "100vh",
-                        left: "50%",
-                        top: "50%",
-                        objectFit: "cover",
-                        transform: "translate(-50%,-50%)",
-                        zIndex: "-1"
-                    }}>
-                    <source src={bgvideo} type='video/webm' />
-                </video>
                 <div className='general-box'>
                     <p>GENERAL RULES</p>
                     <h4>
