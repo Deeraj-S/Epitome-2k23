@@ -14,7 +14,6 @@ The Epitome 2k23 web application is built using the following technologies:
 - <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB" alt="Express.js Badge">
 - <img src="https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB Badge">
 
-<img src="https://media.tenor.com/p7RN1ieWP48AAAAj/thumbs-up-cat.gif">
 
 ---
 If you have any feedback or come across any issues, feel free to get in touch. Happy Coding!
