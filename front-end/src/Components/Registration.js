@@ -22,6 +22,7 @@ const initialValues = {
   code_user2: "",
   code_phno1: "",
   treasure_user1: "",
+  treasure_user2: "",
   treasure_phno1: "",
   photography_user1: "",
   photography_phno1: "",
@@ -39,10 +40,6 @@ const initialValues = {
   pot_phno1: "",
   movie_user1: "",
   movie_user2: "",
-  movie_user3: "",
-  movie_user4: "",
-  movie_user5: "",
-  movie_user6: "",
   movie_phno1: "",
   fashion_user1: "",
   fashion_user2: "",
@@ -52,7 +49,6 @@ const initialValues = {
   fashion_user6: "",
   fashion_phno1: "",
   debate_user1: "",
-  debate_user2: "",
   debate_phno1: "",
   gaming_user1: "",
   gaming_user2: "",
@@ -61,7 +57,7 @@ const initialValues = {
 }
 
 
-function Form() {
+function Registration() {
   const navigate = useNavigate()
   const link = ''
   const [loading, setLoading] = useState(false)
@@ -95,6 +91,7 @@ function Form() {
         code_user2: values.code_user2,
         code_phno1: values.code_phno1,
         treasure_user1: values.treasure_user1,
+        treasure_user2: values.treasure_user2,
         treasure_phno1: values.treasure_phno1,
         photography_user1: values.photography_user1,
         photography_phno1: values.photography_phno1,
@@ -112,10 +109,6 @@ function Form() {
         pot_phno1: values.pot_phno1,
         movie_user1: values.movie_user1,
         movie_user2: values.movie_user2,
-        movie_user3: values.movie_user3,
-        movie_user4: values.movie_user4,
-        movie_user5: values.movie_user5,
-        movie_user6: values.movie_user6,
         movie_phno1: values.movie_phno1,
         fashion_user1: values.fashion_user1,
         fashion_user2: values.fashion_user2,
@@ -125,7 +118,6 @@ function Form() {
         fashion_user6: values.fashion_user6,
         fashion_phno1: values.fashion_phno1,
         debate_user1: values.debate_user1,
-        debate_user2: values.debate_user2,
         debate_phno1: values.debate_phno1,
         gaming_user1: values.gaming_user1,
         gaming_user2: values.gaming_user2,
@@ -175,7 +167,7 @@ function Form() {
             <h4>IT MANAGER</h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="manager_user1" value={values.manager_user1} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="number" autoComplete='off' placeholder="Phone no" name="manager_phno1" value={values.manager_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="manager_phno1" value={values.manager_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>IT QUIZ</h4>
@@ -184,7 +176,7 @@ function Form() {
               <input type="text" autoComplete='off' placeholder="Participant 2" name="quiz_user2" value={values.quiz_user2} onChange={handleChange} onBlur={handleBlur} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="quiz_phno1" value={values.quiz_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="quiz_phno1" value={values.quiz_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>CODING AND WEB DESIGN</h4>
@@ -193,25 +185,26 @@ function Form() {
               <input type="text" autoComplete='off' placeholder="Participant 2" name="code_user2" value={values.code_user2} onChange={handleChange} onBlur={handleBlur} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="code_phno1" value={values.code_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="code_phno1" value={values.code_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>TREASURE HUNT </h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="treasure_user1" value={values.treasure_user1} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="number" autoComplete='off' placeholder="Phone no" name="treasure_phno1" value={values.treasure_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Participant 2" name="treasure_user2" value={values.treasure_user2} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="treasure_phno1" value={values.treasure_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>PHOTOGRAPHY </h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="photography_user1" value={values.photography_user1} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="number" autoComplete='off' placeholder="Phone no" name="photography_phno1" value={values.photography_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="photography_phno1" value={values.photography_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>LOGO RECREATION</h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="logo_user1" value={values.logo_user1} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="number" autoComplete='off' placeholder="Phone no" name="logo_phno1" value={values.logo_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="logo_phno1" value={values.logo_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>THEMATIC DANCE</h4>
@@ -225,10 +218,10 @@ function Form() {
             </div>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 5" name="thematic_user5" value={values.thematic_user5} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="text" autoComplete='off' placeholder="Participant 6" name="thematic_user6" value={values.thematic_user6} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Participant 6 (Optional)" name="thematic_user6" value={values.thematic_user6} onChange={handleChange} onBlur={handleBlur} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="thematic_phno1" value={values.thematic_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="thematic_phno1" value={values.thematic_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>MOVIE MAKING</h4>
@@ -237,33 +230,22 @@ function Form() {
               <input type="text" autoComplete='off' placeholder="Participant 2" name="movie_user2" value={values.movie_user2} onChange={handleChange} onBlur={handleBlur} />
             </div>
             <div className='reg-input-box'>
-              <input type="text" autoComplete='off' placeholder="Participant 3" name="movie_user3" value={values.movie_user3} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="text" autoComplete='off' placeholder="Participant 4" name="movie_user4" value={values.movie_user4} onChange={handleChange} onBlur={handleBlur} required />
-            </div>
-            <div className='reg-input-box'>
-              <input type="text" autoComplete='off' placeholder="Participant 5" name="movie_user5" value={values.movie_user5} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="text" autoComplete='off' placeholder="Participant 6" name="movie_user6" value={values.movie_user6} onChange={handleChange} onBlur={handleBlur} required />
-            </div>
-            <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="movie_phno1" value={values.movie_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="movie_phno1" value={values.movie_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
-            <h4>Dumb Charades</h4>
+            <h4>DUMB CHARADES</h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="pot_user1" value={values.pot_user1} onChange={handleChange} onBlur={handleBlur} required />
               <input type="text" autoComplete='off' placeholder="Participant 2" name="pot_user2" value={values.pot_user2} onChange={handleChange} onBlur={handleBlur} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="pot_phno1" value={values.pot_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="pot_phno1" value={values.pot_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>IT DEBATE</h4>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 1" name="debate_user1" value={values.debate_user1} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="text" autoComplete='off' placeholder="Participant 2" name="debate_user2" value={values.debate_user2} onChange={handleChange} onBlur={handleBlur} required />
-            </div>
-            <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="debate_phno1" value={values.debate_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="debate_phno1" value={values.debate_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>FASHION SHOW</h4>
@@ -273,14 +255,14 @@ function Form() {
             </div>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 3" name="fashion_user3" value={values.fashion_user3} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="text" placeholder="Participant 4" name="fashion_user4" value={values.fashion_user4} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Participant 4" name="fashion_user4" value={values.fashion_user4} onChange={handleChange} onBlur={handleBlur} required />
             </div>
             <div className='reg-input-box'>
               <input type="text" autoComplete='off' placeholder="Participant 5" name="fashion_user5" value={values.fashion_user5} onChange={handleChange} onBlur={handleBlur} required />
-              <input type="text" autoComplete='off' placeholder="Participant 6" name="fashion_user6" value={values.fashion_user6} onChange={handleChange} onBlur={handleBlur} />
+              <input type="text" autoComplete='off' placeholder="Participant 6 (Optional)" name="fashion_user6" value={values.fashion_user6} onChange={handleChange} onBlur={handleBlur} />
             </div>
             <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="fashion_phno1" value={values.fashion_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="fashion_phno1" value={values.fashion_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>GAMING</h4>
@@ -289,7 +271,7 @@ function Form() {
               <input type="text" autoComplete='off' placeholder="Participant 2" name="gaming_user2" value={values.gaming_user2} onChange={handleChange} onBlur={handleBlur} required />
             </div>
             <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder="Phone no" name="gaming_phno1" value={values.gaming_phno1} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder="Phone no" name="gaming_phno1" value={values.gaming_phno1} onChange={handleChange} onBlur={handleBlur} required />
             </div>
 
             <h4>PAYMENT</h4>
@@ -300,7 +282,7 @@ function Form() {
               <h3>ACCOUNT NUMBER : <br />412902010012342 <br /></h3>
             </div>
             <div className='reg-input-box'>
-              <h3>BANK : <br />Union Banl of India <br /></h3>
+              <h3>BANK : <br />Union Bank of India <br /></h3>
             </div>
             <div className='reg-input-box'>
               <h3>IFSC : <br /> UBIN0541290<br /></h3>
@@ -309,7 +291,7 @@ function Form() {
               <h3>BRANCH : <br /> Hampankatta</h3>
             </div>
             <div className='reg-input-box'>
-              <input type="number" autoComplete='off' placeholder='Enter the transaction no' name="trans" value={values.trans} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="text" autoComplete='off' placeholder='Enter the transaction no' name="trans" value={values.trans} onChange={handleChange} onBlur={handleBlur} required />
             </div>
             {message && <h3 className={message.includes('sent') ? 'Success-message' : 'errors-message'}>{message}</h3>}
             <a href={link} onClick={handleSubmit} className='register-btn'>
@@ -317,6 +299,8 @@ function Form() {
             </a>
 
           </form>
+          <h5 className='options'>* If optional please enter Nil.</h5>
+
 
         </div>
       </div>
@@ -325,5 +309,5 @@ function Form() {
     </>
   )
 }
-export default Form
+export default Registration
 

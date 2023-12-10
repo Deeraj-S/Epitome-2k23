@@ -1,20 +1,18 @@
 .general-body {
-    background-image: url(../animation/11.svg);
+    background-image: url("../animation/11.svg");
     width: 100%;
-    height: 100vh;
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    
-
 }
 
 .general-box {
     width: 750px;
-    padding: 40px;
-    margin-top: 4rem;
+    padding: 3rem;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
     background: rgba(14, 14, 14, 0.9);
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
@@ -23,23 +21,29 @@
 
 .general-box p {
     margin: 0 0 30px;
-    color: #DDDDDD;
+    color: #4db8c6;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.8rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    
     font-weight: 800;
-    font-size: 1.5rem;
+
+
 }
-.general-box h2{
+
+.highlight {
     margin: 0 0 30px;
     padding: 0;
-    color: #DDDDDD;
-    text-align: center;
-    font-size: 1.5rem;
+    color: #f86a6a;
+    text-align: left;
+    font-size: 1rem;
     font-family: sans-serif;
     letter-spacing: 1px;
 }
+
+
+
 .general-box h4 {
     margin: 0 0 30px;
     padding: 0;
@@ -49,16 +53,8 @@
     font-family: sans-serif;
     letter-spacing: 1px;
 }
-.general-box h3 {
-    margin: 0 0 30px;
-    padding: 0;
-    color: #b94836;
-    text-align: left;
-    font-size: 1rem;
-    font-family:'Times New Roman', Times, serif;
-    letter-spacing: 1px;
-    font-weight: bold;
-}
+
+
 
 @media screen and (max-width:1200px) {
     .general-box {
@@ -74,9 +70,9 @@
     }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
     .general-box {
         top: 60%;
-        width: 300px;
+        width: 90%;
     }
 }

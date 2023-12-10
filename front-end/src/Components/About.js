@@ -4,7 +4,6 @@ import Cookies from 'js-cookie';
 import Navbar from "./Navbar"
 import Footer from "./Footer"
 import '../styles/About.css'
-import bgvideo from '../animation/4.webm'
 
 function About() {
     const navigate = useNavigate()
@@ -22,12 +21,11 @@ function About() {
                 <div className='general-box'>
                     <p>GENERAL RULES</p>
                     <h4>
-                        * The team must consist maximum of 15 member.<br /> * The registration fee will be 1500/- per team.<br /> * Only one team from one department.<br /> * College ID and permission letter from
-                        Principal/HOD for each team is mandatory.<br />*  Accommodation will be arranged only on prior information for outstation colleges.<br /> * All events are considered for overall.
-                        <br />* Participation points are considered.<br />* Judge’s decision will be final. <br /> *Participants involved in Time Wrap, Mind Mines, IT Pharaoh, and Flash Forward are not allowed from participating in any other event.
-                    </h4>
+                        * The event will be held on 16th and 17th of November 2023.<br /><br />
+                        * The team must consist maximum of 15 members.<br /><br /> * The registration fee will be 1500/- per team.<br /><br /> * Only one team from one department.<br /><br /> * College ID and permission letter from
+                        Principal/HOD for each team is mandatory.<br /><br />*  Accommodation will be arranged only on prior information for outstation colleges.<br /><br /> * All events are considered for overall.
+                        <br /><br />* Participation points are considered.<br /><br />* Judge’s decision will be final.</h4><h4 className="highlight" style={{ color: '#f86a6a', marginTop: '-0.8rem' }}>* Participants involved in Time Warp, Mind Mines, IT Pharaoh, Flash Forward and Conundrum are not allowed from participating in any other event.</h4>
                 </div>
-
             </div>
             <Footer />
         </>

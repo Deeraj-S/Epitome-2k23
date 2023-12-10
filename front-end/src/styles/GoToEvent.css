@@ -1,0 +1,19 @@
+.goto-event {
+    position: fixed;
+    background-color: red;
+    color: black;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+    top: 110px;
+    left: 0.2rem;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    font-size: 1.5rem;
+
+}
+
+.goto-event:hover {
+    cursor: pointer;
+}

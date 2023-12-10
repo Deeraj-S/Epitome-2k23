@@ -23,9 +23,7 @@
 .details-box p {
   margin: 0;
   padding: 0;
-  color: #f5f1f1;
   text-align: center;
-  font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px;
 }
@@ -78,17 +76,27 @@
   box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
   border-radius: 10px;
   margin-top: 10rem;
-
 }
 
 .paradox-box p {
   margin: 0;
   padding: 0;
-  color: #f5f1f1;
   text-align: center;
-  font-size: 1.5rem;
   font-weight: bold;
   letter-spacing: 1px;
+}
+
+
+
+.para-one {
+  color: #4db8c6;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
+}
+
+.para-two {
+  color: #f5f1f1;
+  font-size: 1.3rem;
 }
 
 .paradox-paragraph {
@@ -133,7 +141,7 @@
   }
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
   .details-body {
     padding-top: 4rem;
   }
@@ -147,8 +155,15 @@
     margin-top: 8rem;
   }
 
+  .para-one {
 
-  .details-box p {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
+
+  .para-two {
+
+    font-size: 1.2rem;
+  }
+
+
 }

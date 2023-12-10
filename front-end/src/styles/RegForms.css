@@ -1,7 +1,6 @@
 .reg-body {
   background-image: url('../animation/5.svg');
   width: 100%;
-  height: auto;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -12,7 +11,7 @@
 }
 
 .reg-box {
-  padding: 4rem;
+  padding: 3rem;
   margin-top: 8rem;
   margin-bottom: 2rem;
   background: rgba(14, 14, 14, 0.9);
@@ -22,12 +21,14 @@
 }
 
 .reg-box p {
-  color: #DDDDDD;
+  color: #4db8c6;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.8rem;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: 800;
-  font-size: 1.9rem;
+
 
 }
 
@@ -37,12 +38,14 @@
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .reg-box form h3 {
   color: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
 }
+
 .reg-input-box {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -68,7 +71,6 @@
 }
 
 .register-btn {
-  position: relative;
   display: inline-block;
   padding: 10px 20px;
   font-weight: bold;
@@ -101,10 +103,14 @@
   padding-left: 0.9rem;
 }
 
-@media screen and (max-width:600px) {
+.options {
+  color: #4db8c6;
+}
 
+@media screen and (max-width:650px) {
   .reg-box {
-    padding: 3rem;
+    width: 90%;
+    padding: 2rem;
   }
 
   .reg-input-box {

@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import Cookies from 'js-cookie';
 import Navbar from './Navbar'
 import '../styles/EventForms.css'
+import GoToEventButton from './GoToEventButton';
 
 function EventRules() {
     const navigate = useNavigate()
@@ -18,13 +19,23 @@ function EventRules() {
         }
     }, [navigate])
 
-    if (params.id === 'timeWrap') {
+    function scrollToTop() {
+        window.scrollTo(0, 0);
+    }
+
+    useEffect(() => {
+        window.onload = function () {
+            scrollToTop();
+        };
+    })
+
+    if (params.id === 'timeWarp') {
         EventData = {
-            EventName1: 'Time Wrap',
+            EventName1: 'Time Warp',
             EventName2: '(IT Quiz)',
             EventDetails1: '* No.of participants : 2.',
             EventDetails2: '* No electronic gadgets are allowed .',
-            EventDetails3: '* They should have knowlege on general topics, logos, taglines, coding related topics.',
+            EventDetails3: '* They should have knowledge on general topics, logos, taglines, coding related topics.',
             EventDetails4: '* There will be 3 rounds.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Sunny Joel Paulose - 9481769484',
@@ -36,13 +47,13 @@ function EventRules() {
         EventData = {
             EventName1: 'MIND MINES',
             EventName2: '(Coding and webdesign)',
-            EventDetails1: '* No.of participants : 2 ',
-            EventDetails2: '* Participants must be familiar with Java and html,css language.',
-            EventDetails3: '* Round will include debugging, web design and implementation.',
-            EventDetails4: '* There will be 4 rounds',
+            EventDetails1: '* No.of participants : 2.',
+            EventDetails2: '* Participants must be familiar with Java and html,css languages.',
+            EventDetails3: '* Round will include debugging, web designing and implementation.',
+            EventDetails4: '* There will be 2 rounds.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Vijeth - 9400926835',
-            Eventinfo2: 'Aswhith K J - 9448757292'
+            Eventinfo2: 'Ashwith K J - 9448757292'
         }
     }
 
@@ -50,11 +61,11 @@ function EventRules() {
         EventData = {
             EventName1: 'FUTURE FLASH',
             EventName2: '(Movie making)',
-            EventDetails1: '* No of Participants: 4(min)-6(max) ',
-            EventDetails2: '* Shortfilm must be 3-7 minutes long.',
-            EventDetails3: '* Film can be created using Phone or Digital Camera.',
+            EventDetails1: '* No of Participants: 2.',
+            EventDetails2: '* Shortfilm must be 4 minutes long.',
+            EventDetails3: '* Should bring camera and laptop.',
             EventDetails4: '* Gopro is not allowed.',
-            EventDetails5: '* External video (from youtube,etc) cannot be added in shortfilm.',
+            EventDetails5: '* The specified topic should be there in the moive.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Abdulla Nishad PM - 9633164690',
             Eventinfo2: 'Om Prakash Jangid - 9571305470'
@@ -65,10 +76,11 @@ function EventRules() {
         EventData = {
             EventName1: 'TURN THE TABLE',
             EventName2: '(IT Debate)',
-            EventDetails1: '* No. of Participants: 1 ',
+            EventDetails1: '* No. of Participants: 1.',
             EventDetails2: '* Usage of offensive words are strictly prohibited.',
             EventDetails3: '* They should be ready to take up any role.',
-            EventDetails4: '* There will be 3 rounds',
+            EventDetails4: '* There will be 2 rounds.',
+            EventDetails5: '* The language used must be ENGLISH.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Raksha Aithappa Shetty - 8330883303',
             Eventinfo2: 'Anusha Rose- 6363336587',
@@ -79,12 +91,12 @@ function EventRules() {
         EventData = {
             EventName1: 'CHRONOBEATS',
             EventName2: '(THEMATIC DANCE)',
-            EventDetails1: '* No.of Participants: 5(min)-6(max) ',
+            EventDetails1: '* No.of Participants: 5(min)-6(max).',
             EventDetails2: '* The choice of the theme is entirely up to the teams.',
             EventDetails3: '* The time limit for each performance is 4 minutes, with an additional 1 minute allocated for setup before the performance begins.',
             EventDetails4: '* Participants must be aware that any obscene or offensive acts are completely unacceptable and will lead to immediate disqualification.',
             EventHeads: 'EVENT HEADS',
-            Eventinfo1: 'Rashmi n - 7892998798',
+            Eventinfo1: 'Rashmi - 7892998798',
             Eventinfo2: 'Akashy Kumar - 9740791523',
         }
     }
@@ -93,14 +105,15 @@ function EventRules() {
         EventParadox = {
             EventName1: 'STELLAR',
             EventName2: '(Fashion show)',
-            EventDetails1: '* No.of Participants: 5(min)-6(max)',
-            EventDetails2: '* The theme for the Fashion Show is “Celestial: Fashions Voyage from the Stars to Earth”',
-            EventDetails3: '* Each team will have a total performance time of 7+2 minutes, including both setup and performance.',
+            EventDetails1: '* No.of Participants: 5(min)-6(max) including the host/anchor(optional).',
+            EventDetails2: '* The theme for the Fashion Show is “Celestial: Fashions Voyage from the Stars to Earth”.',
+            EventDetails3: '* Each team will have a total performance time of 3+1 minutes, including both setup and performance.',
             EventDetails4: '* Participants must carry their tracks/audio files in a pen drive and also provide a copy in their Google Drive.',
             EventDetails5: '* Participants are encouraged to submit their own digital backdrop file in HD format before the event. These will be displayed during their presentation.',
             EventDetails6: '* All costumes are permitted as long as they maintain decency. No vulgarity in the costumes (e.g., sleeveless, backless, short dresses, etc.) is allowed. Violation of this rule will result in disqualification.',
             EventDetails7: '* Professionally made or rented costumes are not permitted. Participants must use their own creativity and skills to create the costumes.',
             EventDetails8: '* Props such as fire, powder, water, light, and glass are strictly prohibited.',
+            EventDetails9: '* Judging Criteria : Participants will be judged based on the following criteria - costumes, walking stance, choreography, music, digital backdrop and attitude.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Alroy Menezes - 8073128251',
             Eventinfo2: 'Reiona Dsouza – 7498440933',
@@ -111,12 +124,11 @@ function EventRules() {
         EventData = {
             EventName1: 'CONUNDRUM',
             EventName2: '(Treasure hunt)',
-            EventDetails1: '* No.of Participents: 1',
+            EventDetails1: '* No.of Participants: 2.',
             EventDetails2: '* Be prepared with puzzle solving knowledge, riddles, knowledge about technologies.',
             EventDetails3: '* Location will be whole campus.',
-            EventDetails4: '* There will be 4 rounds',
             EventHeads: 'EVENT HEADS',
-            Eventinfo1: 'Ashika Sheikh - 9778397497',
+            Eventinfo1: 'Husna - 9947545258',
             Eventinfo2: 'Srilakshmi Shenoy - 8592901487',
         }
     }
@@ -128,8 +140,8 @@ function EventRules() {
             EventDetails1: '* No.of Participants: 1.',
             EventDetails2: '* Dress code is "Formal attire".',
             EventDetails3: '* Participants should bring their own laptops.',
-            EventDetails4: '* Rounds will consist of apptitude, mock press, case study, stress interview.',
-            EventDetails5: '* There will be 5 rounds',
+            EventDetails4: '* Rounds will consist of aptitude, case study, stress interview.',
+            EventDetails5: '* There will be 4 rounds.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Anvitha Alva - 8310400951',
             Eventinfo2: 'Kavana - 8431395996'
@@ -140,10 +152,10 @@ function EventRules() {
         EventData = {
             EventName1: 'FLASH FORWARD',
             EventName2: '(Photography)',
-            EventDetails1: '* No.of Participant: 1',
+            EventDetails1: '* No.of Participant: 1.',
             EventDetails2: '* Participants should get their equipments like laptop, camera, mobile, tripod etc.',
             EventDetails3: '* They should be familar with editing.',
-            EventDetails4: '* There will be 4 rounds',
+            EventDetails4: '* There will be 4 rounds.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Chaithanya KS - 8050244505 ',
             Eventinfo2: 'Joyce Smitha Pereira - 7349756316'
@@ -173,7 +185,7 @@ function EventRules() {
             EventDetails3: '* Participants should bring headphones.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Abhay Kulkarni - 9962797068',
-            Eventinfo2: 'Brijesh - 9766465683'
+            Eventinfo2: 'Yashwanth - 8296072320'
         }
     }
 
@@ -182,13 +194,12 @@ function EventRules() {
             EventName1: 'PARADOX',
             EventName2: '(Logo Recreation and Meme making)',
             EventDetails1: '* No.of Paticipants: 1.',
-            EventDetails2: '* Participant should get their own laptop.',
-            EventDetails3: '* Only use the logo that is being provided by the team.',
-            EventDetails4: '* Any offline medium can be used to recreate the logo.',
-            EventDetails5: '* The theme for IT MEME Making will be provided.',
-            EventDetails6: '* Your meme must be appropriate for all ages. This means no religious, political violence or hate speech.',
-            EventDetails7: '* Your meme must be relevant to the theme that is being provided.',
-            EventDetails8: '* There will be 2 rounds.',
+            EventDetails2: '* Only use the logo that is being provided by the team.',
+            EventDetails3: '* Any offline medium can be used to recreate the logo.',
+            EventDetails4: '* The theme for IT MEME Making will be provided.',
+            EventDetails5: '* Your meme must be appropriate for all ages. This means no religious, political violence or hate speech.',
+            EventDetails6: '* Your meme must be relevant to the theme that is being provided.',
+            EventDetails7: '* There will be 2 rounds.',
             EventHeads: 'EVENT HEADS',
             Eventinfo1: 'Ashritha Rai - 7204097278',
             Eventinfo2: 'Anvith G - 9483335593'
@@ -202,6 +213,7 @@ function EventRules() {
                 params.id == null ?
                     <>
                         <div className="details-body">
+                            <GoToEventButton />
                             <div className="details-box">
                                 <div className='details-paragraph'>
                                     <p className='para-one'>EVENT NAME</p>
@@ -219,12 +231,12 @@ function EventRules() {
             {
                 EventData != null ?
                     <>
-                        <div className="details-body">
-
+                        <div className="details-body" onLoad={scrollToTop()}>
+                            <GoToEventButton />
                             <div className="details-box">
                                 <div className='details-paragraph'>
                                     <p className='para-one'>{EventData.EventName1}</p>
-                                    <p >{EventData.EventName2}</p>
+                                    <p className='para-two'>{EventData.EventName2}</p>
                                 </div>
                                 <div className="details-content">
                                     <h4>{EventData.EventDetails1}</h4>
@@ -236,10 +248,11 @@ function EventRules() {
                                     <h4>{EventData.EventDetails7}</h4>
                                     <h4>{EventData.EventDetails8}</h4>
                                     <h3>{EventData.EventHeads}</h3>
-                                    <h4>{EventData.Eventinfo1}</h4>
-                                    <h4>{EventData.Eventinfo2}</h4>
+                                    <h4>{EventData.Eventinfo1} <i class="fa-solid fa-phone-flip"></i></h4>
+                                    <h4>{EventData.Eventinfo2} <i class="fa-solid fa-phone-flip"></i></h4>
                                 </div>
                             </div>
+
                         </div>
 
                     </>
@@ -249,12 +262,12 @@ function EventRules() {
             {
                 EventParadox != null ?
                     <>
-                        <div className="paradox-body">
-
+                        <div className="paradox-body" onLoad={scrollToTop()}>
+                            <GoToEventButton />
                             <div className="paradox-box">
                                 <div className='paradox-paragraph'>
                                     <p className='para-one'>{EventParadox.EventName1}</p>
-                                    <p >{EventParadox.EventName2}</p>
+                                    <p className='para-two'>{EventParadox.EventName2}</p>
                                 </div>
                                 <div className="paradox-content">
                                     <h4>{EventParadox.EventDetails1}</h4>
@@ -265,13 +278,14 @@ function EventRules() {
                                     <h4>{EventParadox.EventDetails6}</h4>
                                     <h4>{EventParadox.EventDetails7}</h4>
                                     <h4>{EventParadox.EventDetails8}</h4>
+                                    <h4>{EventParadox.EventDetails9}</h4>
                                     <h3>{EventParadox.EventHeads}</h3>
-                                    <h4>{EventParadox.Eventinfo1}</h4>
-                                    <h4>{EventParadox.Eventinfo2}</h4>
+                                    <h4>{EventParadox.Eventinfo1} <i class="fa-solid fa-phone-flip"></i></h4>
+                                    <h4>{EventParadox.Eventinfo2} <i class="fa-solid fa-phone-flip"></i></h4>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
                     </>
                     : ''
             }

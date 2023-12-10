@@ -16,7 +16,7 @@ const initialValues = {
   confirm_password: "",
 };
 
-function Forms() {
+function SignUp() {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState(false)
@@ -112,4 +112,4 @@ function Forms() {
   )
 }
 
-export default Forms
+export default SignUp

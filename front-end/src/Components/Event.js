@@ -10,7 +10,7 @@ import BackToTopButton from "./BackToTopButton";
 
 
 function Event() {
-    const timeWrap = useRef(null);
+    const timeWarp = useRef(null);
     const mindMines = useRef(null);
     const futureFlash = useRef(null);
     const turnTheTable = useRef(null);
@@ -40,30 +40,28 @@ function Event() {
     }, [navigate])
 
 
-
-
     return (
         <>
             <Navbar />
             <div className="event-bg" ref={events}>
                 <h1>EVENTS</h1>
                 <div className="event-buttons">
-                    <button onClick={() => scrollToSection(timeWrap)} className="btn1">TIME WRAP</button>
+                    <button onClick={() => scrollToSection(timeWarp)} className="btn1">TIME WARP</button>
                     <button onClick={() => scrollToSection(mindMines)} className="btn1">MIND MINES</button>
                     <button onClick={() => scrollToSection(futureFlash)} className="btn1">FUTURE FLASH</button>
                     <button onClick={() => scrollToSection(turnTheTable)} className="btn1">TURN THE TABLE</button>
                     <button onClick={() => scrollToSection(chronoBeats)} className="btn1">CHRONOBEATS</button>
-                    <button onClick={() => scrollToSection(setllar)} className="btn1">SETLLAR</button>
+                    <button onClick={() => scrollToSection(setllar)} className="btn1">STELLAR</button>
                     <button onClick={() => scrollToSection(conunDrum)} className="btn1">CONUNDRUM</button>
                     <button onClick={() => scrollToSection(itManager)} className="btn1">IT PHARAOH</button>
                     <button onClick={() => scrollToSection(flashForward)} className="btn1">FLASH FORWARD</button>
-                    <button onClick={() => scrollToSection(dumbCharades)} className="btn1">DUMB CHARADES</button>
-                    <button onClick={() => scrollToSection(games)} className="btn1">WARLOADS</button>
+                    <button onClick={() => scrollToSection(dumbCharades)} className="btn1">DELOREAN MUTES</button>
+                    <button onClick={() => scrollToSection(games)} className="btn1">WARLORDS</button>
                     <button onClick={() => scrollToSection(paradox)} className="btn1">PARADOX</button>
                 </div>
                 <h1 className="heros">EVENT POSTERS</h1>
                 <div className="event-box">
-                    <Link to={'/event-rules/timeWrap'}><div ref={timeWrap} className="box1"></div></Link>
+                    <Link to={'/event-rules/timeWarp'}><div ref={timeWarp} className="box1"></div></Link>
                     <Link to={'/event-rules/mindMines'}><div ref={mindMines} className="box2"></div></Link>
                     <Link to={'/event-rules/futureFlash'}><div ref={futureFlash} className="box3"></div></Link>
                     <Link to={'/event-rules/turnTheTable'}><div ref={turnTheTable} className="box4"></div></Link>

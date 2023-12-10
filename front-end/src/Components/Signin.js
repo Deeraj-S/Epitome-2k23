@@ -7,12 +7,11 @@ import Cookies from 'js-cookie';
 import Navsign from './Navsign';
 import '../styles/Forms.css'
 import LoadingSpinner from './LoadingSpinner';
-
 const initialValues = {
   email: "",
   password: "",
 }
-function Signin() {
+function SignIn() {
   const navigate = useNavigate()
   const [loading, setLoading] = useState(false)
   const [message, setMessage] = useState('');
@@ -39,11 +38,7 @@ function Signin() {
         password: values.password
       }).then((res) => {
 
-        if (res.data.code === 230) {
-          navigate("/Admin")
-        }
-
-        else if (res.data.code === 200) {
+        if (res.data.code === 200) {
           navigate('/')
           Cookies.set('TOKEN', res.data.token, { expires: new Date(Date.now() + 7200000) })
         }
@@ -79,13 +74,13 @@ function Signin() {
 
           <form onSubmit={handleSubmit} >
             <div className='user-box'>
-              <input name="email" id='email' value={values.email} onChange={handleChange} onBlur={handleBlur} required />
+              <input name="email" autoComplete='off' id='email' value={values.email} onChange={handleChange} onBlur={handleBlur} required />
               {errors.email && touched.email ? (<p className='form-error'>{errors.email}</p>) : null}
 
               <label htmlFor='email'>Email</label>
             </div>
             <div className='user-box'>
-              <input type="password" name="password" id='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
+              <input type="password" autoComplete='off' name="password" id='password' value={values.password} onChange={handleChange} onBlur={handleBlur} required />
               {errors.password && touched.password ? (<p className='form-error'>{errors.password}</p>) : null}
               <label htmlFor='password'>Password</label>
             </div>
@@ -101,10 +96,11 @@ function Signin() {
             <p>Don't have an account? <sub> <a href='/SignUp' className="a2">Sign up!</a></sub></p>
           </form>
         </div>
+
       </div>
     </>
   )
 }
 
-export default Signin
+export default SignIn
 

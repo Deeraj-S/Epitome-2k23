@@ -27,7 +27,7 @@
     color: #FDF096;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (max-width:650px) {
 
     .footer2 {
         font-size: 0.9rem;

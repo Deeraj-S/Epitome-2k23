@@ -60,7 +60,7 @@ function ForgotPass() {
 
                     <form onSubmit={handleSubmit}>
                         <div className='user-box'>
-                            <input type="text" name="email" id="email" value={values.email} onChange={handleChange} required />
+                            <input type="text" autoComplete='off' name="email" id="email" value={values.email} onChange={handleChange} required />
                             {errors.email && touched.email ? (<p className="form-error">{errors.email}</p>) : null}
                             <label htmlFor="email">Email</label>
                         </div>
