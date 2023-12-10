@@ -5,7 +5,7 @@ The Epitome 2k23 is a web application designed to streamline the process of mana
 The platform enables students from different colleges to access and register for various events hosted by the institute.
 
 
-## Technologies used
+### Technologies used
 
 The Epitome 2k23 web application is built using the following technologies:
 
