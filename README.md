@@ -1,6 +1,6 @@
 # EPITOME 2k23
 
-The Epitome 2k23 is a web application designed to streamline the process of managing the inter-collegiate student registration for the fest ( EPITOME ) organized by ST ALOYSIUS INSTITUTE OF MANAGEMENT AND INFORMATION TECHNOLOGY ( AIMIT )
+The Epitome 2k23 is a web application designed to streamline the process of managing the inter-collegiate student registration for the fest ( EPITOME ) organized by ST ALOYSIUS INSTITUTE OF MANAGEMENT AND INFORMATION TECHNOLOGY ( AIMIT ).
 
 The platform enables students from different colleges to access and register for various events hosted by the institute.
 
